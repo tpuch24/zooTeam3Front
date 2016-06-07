@@ -33,7 +33,19 @@ public class FoodManager {
         liste.add(food);
     }
 
-    
+    public void addFoodlist(Food foodToAdd){
+        ArrayList<Food> listeCopy = new ArrayList<Food>();
+        for(Food foodItem : liste) {
+            if(foodItem.getName().equals(foodToAdd.getName())){
+                //exist
+                return;
+            }
+        }
+        //only excuted if not exists
+        liste.add(foodToAdd);
+
+    }
+
     public ArrayList<Food> getFoodList(){
         return liste;
     }
