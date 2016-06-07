@@ -34,7 +34,14 @@
             android:name=".FoodDetailActivity"
             android:label="@string/title_activity_food_detail"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AnimalDetailActivity"></activity>
+        <activity
+            android:name=".AnimalDetailActivity"
+            android:label="@string/title_activity_animal_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AnimalNewActivity"
+            android:label="@string/title_activity_animal_new"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

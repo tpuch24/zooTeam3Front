@@ -35,8 +35,58 @@ public class AnimalManager {
         liste.add(animal);
     }
 
+    /**
+     *
+     * @return all animal's list
+     */
     public ArrayList<Animal> getListeAnimal(){
         return liste;
+    }
+
+    /**
+     *
+     * @param name
+     * @return  animal who have "name" - null if notexist
+     */
+    public Animal getAnimalByName(String name){
+        for (Animal animal: this.liste  ) {
+            if (animal.getName() == name) { return animal;}
+        }
+        return null;
+    }
+
+    /**
+     * Add an animal in list - Birth or new arrival
+     * @param animal
+     */
+    public void addNewAnimal(Animal animal){
+        for (Animal animalExist: this.liste  ) {
+            if (animalExist.getName() == animal.getName()) { return;}
+        }
+        liste.add(animal);
+    }
+
+    /**
+     * remove animal from list
+     * @param animal
+     */
+    public void removeAnimal(Animal animal){
+        for (Animal animalExist: this.liste  ) {
+            if (animalExist.getName() == animal.getName()) {
+                liste.remove(animalExist);}
+        }
+        liste.add(animal);
+    }
+
+
+    public void updateAnimal(Animal animal){
+        for (Animal animalExist: this.liste  ) {
+            if (animalExist.getName() == animal.getName()) {
+                liste.remove(animalExist);
+                liste.add(animal);
+            }
+        }
+        liste.add(animal);
     }
 }
 

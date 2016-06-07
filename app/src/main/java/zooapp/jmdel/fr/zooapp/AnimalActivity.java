@@ -1,6 +1,7 @@
 package zooapp.jmdel.fr.zooapp;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +21,9 @@ import zooapp.jmdel.fr.zooapp.model.Animal;
 import zooapp.jmdel.fr.zooapp.model.AnimalAdapter;
 import zooapp.jmdel.fr.zooapp.model.AnimalManager;
 
+/**
+ * Activity to show Animal list to be selected
+ */
 public class AnimalActivity extends ListActivity {
 
     ArrayList<Animal> animals = AnimalManager.getInstance().getListeAnimal();
@@ -27,17 +33,24 @@ public class AnimalActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal);
 
-       /* for (Animal animal: animals) {
-            animallist.add(animal.getName());
-        }
-        */
         AnimalAdapter animalAdapter = new AnimalAdapter(this, animals);
         setListAdapter(animalAdapter);
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-        //        R.layout.animal_cell, R.id.animal_name, animals);
 
-        setListAdapter(animalAdapter);
+        FloatingActionButton button = (FloatingActionButton)findViewById(R.id.addbt);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Context context = getApplicationContext();
+                CharSequence text = "Ajout d'un animal";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+                Intent intent=new Intent(AnimalActivity.this,AnimalNewActivity.class);
+                startActivity(intent);
+
+            }
+        }) ;
 
     }
 
@@ -45,8 +58,10 @@ public class AnimalActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Intent intent = new Intent(this,AnimalDetailActivity.class);
-        intent.putExtra("s_animal_name",animals.get(position).getName());
+        intent.putExtra("animal",animals.get(position));
         startActivity(intent);
 
     }
+
+
 }

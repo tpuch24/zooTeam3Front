@@ -6,5 +6,6 @@
     <string name="title_activity_food">FoodActivity</string>
     <string name="title_activity_ticket">TicketsActivity</string>
     <string name="title_activity_food_detail">FoodDetailActivity</string>
-
+    <string name="title_activity_animal_detail">FoodDetailActivity</string>
+    <string name="title_activity_animal_new">FoodDetailActivity</string>
 </resources>

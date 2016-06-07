@@ -1,9 +1,13 @@
 package zooapp.jmdel.fr.zooapp.model;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  * Created by Thierry on 06/06/2016.
  */
-public class Animal {
+public class Animal implements Serializable{
 
     protected String name;
     protected String specy;
