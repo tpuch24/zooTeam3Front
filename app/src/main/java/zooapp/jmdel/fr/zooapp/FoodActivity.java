@@ -2,6 +2,7 @@ package zooapp.jmdel.fr.zooapp;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,15 @@ public class FoodActivity extends ListActivity {
                 R.layout.food_cell, R.id.food_name, foodlist);
 
         setListAdapter(adapter);
+
+        FloatingActionButton addfood = (FloatingActionButton) findViewById(R.id.add_food);
+        addfood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(FoodActivity.this,FoodFormActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -39,4 +49,6 @@ public class FoodActivity extends ListActivity {
         startActivity(intent);
 
     }
+
+
 }

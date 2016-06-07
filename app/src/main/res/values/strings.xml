@@ -6,5 +6,9 @@
     <string name="title_activity_food">FoodActivity</string>
     <string name="title_activity_ticket">TicketsActivity</string>
     <string name="title_activity_food_detail">FoodDetailActivity</string>
-
+    <string name="title_activity_food_form">FoodFormActivity</string>
+    <string name="label_food_name_form">Name of food :</string>
+    <string name="label_food_type_form">Type of food :</string>
+    <string name="value_food_name_form">Food Name Value :</string>
+    <string name="value_food_type_form">Food Type Value</string>
 </resources>
