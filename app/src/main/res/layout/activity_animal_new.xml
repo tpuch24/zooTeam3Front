@@ -11,31 +11,63 @@
     android:fitsSystemWindows="true"
     tools:context="zooapp.jmdel.fr.zooapp.AnimalDetailActivity">
 
-    <GridLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:columnCount="2"
-        >
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+        <GridLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+
+            android:layout_alignLeft="@+id/textView"
+            android:useDefaultMargins="false"
+            android:columnCount="2"
+            >
 
 
-        <TextView
-            android:id="@+id/animal_new_label_name"
+            <TextView
+                android:id="@+id/animal_new_label_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <EditText
+                android:id="@+id/animal_new_name"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:inputType="textPersonName"/>
+
+            <TextView
+                android:id="@+id/animal_new_label_specy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/animal_new_speci"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:inputType="textPersonName" />
+
+            <TextView
+            android:id="@+id/animal_new_label_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/animal_new_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/animal_new_age"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:inputType="textPersonName" />
 
-        <TextView
-            android:id="@+id/animal_new_label_specy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <EditText
-            android:id="@+id/animal_new_speci"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        </GridLayout>
+    </ScrollView>
 
-    </GridLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addnewbt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp"
+        android:src="@android:drawable/ic_menu_save" />
 
 </android.support.design.widget.CoordinatorLayout>

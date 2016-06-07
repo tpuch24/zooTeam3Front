@@ -41,14 +41,13 @@ public class AnimalActivity extends ListActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Context context = getApplicationContext();
-                CharSequence text = "Ajout d'un animal";
+                CharSequence text = "Appel à ajout d'un animal";
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
                 Intent intent=new Intent(AnimalActivity.this,AnimalNewActivity.class);
                 startActivity(intent);
-
             }
         }) ;
 
