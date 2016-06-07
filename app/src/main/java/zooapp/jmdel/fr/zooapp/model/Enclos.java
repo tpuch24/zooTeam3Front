@@ -58,6 +58,7 @@ public class Enclos implements Serializable {
     public String getIdString() {
         return new Integer(this.getId()).toString();
     }
+
     public String getNbAnimalString() {
         return new Integer(this.getNbAnimal()).toString();
     }
