@@ -11,4 +11,14 @@
     <string name="label_food_type_form">Type of food :</string>
     <string name="value_food_name_form">Food Name Value :</string>
     <string name="value_food_type_form">Food Type Value</string>
+
+    <string-array name="food_type_array">
+        <item>Animal alive</item>
+        <item>Meat</item>
+        <item>Grains</item>
+        <item>Vegetables</item>
+        <item>Vistors food</item>
+        <item>Staff food</item>
+    </string-array>
+
 </resources>

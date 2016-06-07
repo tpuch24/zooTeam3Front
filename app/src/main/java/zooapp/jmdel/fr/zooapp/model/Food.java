@@ -1,12 +1,13 @@
 package zooapp.jmdel.fr.zooapp.model;
 
+import java.io.Serializable;
 import java.util.Enumeration;
 
 /**
  * Created by jean-michel on 07/06/2016.
  */
 
-public class Food {
+public class Food implements Serializable {
 
     protected String name;
     protected String type;

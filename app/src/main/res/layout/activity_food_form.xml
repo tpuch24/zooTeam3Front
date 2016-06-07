@@ -23,8 +23,6 @@
         <GridLayout
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-
-            android:layout_alignLeft="@+id/textView"
             android:useDefaultMargins="false"
             android:columnCount="2">
 
@@ -45,16 +43,53 @@
             </EditText>
 
             <TextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_food_type_form"
                 android:textSize="10pt">
             </TextView>
-            <EditText
-                android:id="@+id/EditTextType"
+            <Spinner
+                android:id="@+id/spinnerTypeeFood"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/value_food_type_form"
+                android:entries="@array/food_type_array"
+                android:prompt="@string/value_food_type_form" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food eater :"
+                android:textSize="10pt">
+            </TextView>
+            <EditText
+                android:id="@+id/EditTextEater"
+                android:layout_height="wrap_content"
+                android:hint="value_food_eater_form"
+                android:inputType="textPersonName"
+                android:layout_width="fill_parent">
+            </EditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food stock :"
+                android:textSize="10pt">
+            </TextView>
+            <EditText
+                android:id="@+id/EditDoubleStock"
+                android:layout_height="wrap_content"
+                android:hint="Stock quatity"
+                android:inputType="numberDecimal"
+                android:layout_width="fill_parent">
+            </EditText>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stock unity :"
+                android:textSize="10pt">
+            </TextView>
+            <EditText
+                android:id="@+id/EditStockUnit"
+                android:layout_height="wrap_content"
+                android:hint="for expl : kg, pieces, bottle ..."
                 android:inputType="textPersonName"
                 android:layout_width="fill_parent">
             </EditText>

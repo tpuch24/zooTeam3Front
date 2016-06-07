@@ -14,22 +14,26 @@ import java.util.List;
 
 import java.lang.reflect.Array;
 
+import zooapp.jmdel.fr.zooapp.model.Animal;
+import zooapp.jmdel.fr.zooapp.model.AnimalAdapter;
+import zooapp.jmdel.fr.zooapp.model.AnimalManager;
+import zooapp.jmdel.fr.zooapp.model.Food;
+import zooapp.jmdel.fr.zooapp.model.FoodAdapter;
+import zooapp.jmdel.fr.zooapp.model.FoodManager;
+
 public class FoodActivity extends ListActivity {
-    List <String> foodlist = new ArrayList<>();
+    ArrayList<Food> foodlist = FoodManager.getInstance().getFoodList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
-        foodlist.add("meat");
-        foodlist.add("grains");
-        foodlist.add("vegetables");
-        foodlist.add("pop-korn");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.food_cell, R.id.food_name, foodlist);
 
-        setListAdapter(adapter);
+
+        FoodAdapter foodAdapter = new FoodAdapter(this, foodlist);
+        setListAdapter(foodAdapter);
+
 
         FloatingActionButton addfood = (FloatingActionButton) findViewById(R.id.add_food);
         addfood.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +49,7 @@ public class FoodActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Intent intent = new Intent(this,FoodDetailActivity.class);
-        intent.putExtra("s_food_name",foodlist.get(position));
+        intent.putExtra("foodlist",foodlist.get(position).getName());
         startActivity(intent);
 
     }
