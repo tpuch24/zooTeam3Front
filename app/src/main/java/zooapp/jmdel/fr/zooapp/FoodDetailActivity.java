@@ -15,13 +15,12 @@ public class FoodDetailActivity extends AppCompatActivity {
 
         Bundle extra = getIntent().getExtras();
         Food food = (Food) extra.getSerializable("food");
+        String content="Name :  "+food.getName()+" \n"+
+            "Type :  "+food.getType()+" \n "+
+            "Eater : "+food.getEater_type()+" \n "+
+            "Stock : "+food.getStock()+" "+ food.getUnity();
 
-        ((TextView)(findViewById(R.id.food_detail_text))).setText(
-                "Name :  "+food.getName()+" \n"+
-                "Type :  "+food.getType()+" \n "+
-                "Eater : "+food.getEater_type()+" \n "+
-                "Stock : "+food.getStock()+" "+ food.getUnity()
-        );
+        ((TextView)(findViewById(R.id.food_detail_text))).setText(content);
     }
 
 }

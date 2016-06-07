@@ -49,7 +49,7 @@ public class FoodActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Intent intent = new Intent(this,FoodDetailActivity.class);
-        intent.putExtra("foodlist",foodlist.get(position).getName());
+        intent.putExtra("s_food_name",foodlist.get(position));
         startActivity(intent);
 
     }
