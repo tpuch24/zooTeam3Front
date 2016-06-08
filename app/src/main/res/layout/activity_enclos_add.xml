@@ -20,9 +20,10 @@
             android:text="Id : "/>
         <TextView
             android:id="@+id/idEnclos"
-            android:width="40dp"
+            android:width="200dp"
             android:height="30dp"
-            android:textSize="15dp"/>
+            android:textSize="15dp"
+            android:text="Ne pas saisir"/>
         <TextView
             android:width="100dp"
             android:height="30dp"
@@ -37,12 +38,12 @@
             android:width="100dp"
             android:height="30dp"
             android:text="Nb animaux : "/>
-    <EditText
-        android:id="@+id/nbAnimaux"
-        android:width="200dp"
-        android:height="30dp"
-        android:inputType="text"
-        android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/nbAnimaux"
+            android:width="200dp"
+            android:height="30dp"
+            android:inputType="text"
+            android:textSize="15dp"/>
     </GridLayout>
 
     <LinearLayout

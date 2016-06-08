@@ -23,7 +23,7 @@
             android:label="@string/title_activity_animal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EnclosActivity"
+            android:name=".enclos.EnclosActivity"
             android:label="@string/title_activity_enclos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -35,8 +35,9 @@
             android:label="@string/title_activity_food_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AnimalDetailActivity" />
-        <activity android:name=".EnclosDetailActivity" />
-        <activity android:name=".EnclosUpdateActivity"></activity>
+        <activity android:name=".enclos.EnclosDetailActivity" />
+        <activity android:name=".enclos.EnclosUpdateActivity" />
+        <activity android:name=".enclos.EnclosAddActivity"></activity>
     </application>
 
 </manifest>

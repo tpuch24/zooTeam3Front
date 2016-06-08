@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.enclos.model;
 
 import android.support.annotation.VisibleForTesting;
 
@@ -61,5 +61,20 @@ public class Enclos implements Serializable {
 
     public String getNbAnimalString() {
         return new Integer(this.getNbAnimal()).toString();
+    }
+
+    public boolean updateEnclos() {
+        EnclosManager enclosM = EnclosManager.getInstance();
+        return enclosM.updateEnclos(this);
+    }
+
+    public boolean addEnclos() {
+        EnclosManager enclosM = EnclosManager.getInstance();
+        return enclosM.addEnclos(this);
+    }
+
+    public boolean deleteEnclos() {
+        EnclosManager enclosM = EnclosManager.getInstance();
+        return enclosM.deleteEnclos(this);
     }
 }

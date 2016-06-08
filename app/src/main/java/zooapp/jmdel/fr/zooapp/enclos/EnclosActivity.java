@@ -1,19 +1,19 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.enclos;
 
 import android.app.ListActivity;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import zooapp.jmdel.fr.zooapp.model.Enclos;
-import zooapp.jmdel.fr.zooapp.model.EnclosAdapter;
-import zooapp.jmdel.fr.zooapp.model.EnclosManager;
+import zooapp.jmdel.fr.zooapp.R;
+import zooapp.jmdel.fr.zooapp.enclos.model.Enclos;
+import zooapp.jmdel.fr.zooapp.enclos.model.EnclosAdapter;
+import zooapp.jmdel.fr.zooapp.enclos.model.EnclosManager;
 
 public class EnclosActivity extends ListActivity {
 
@@ -36,6 +36,10 @@ public class EnclosActivity extends ListActivity {
             }
         });
     }
+
+//    protected void onResume (Bundle savedInstanceState) {
+//
+//    }
 
         @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {

@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.enclos.model;
 
 import java.util.ArrayList;
 
@@ -39,6 +39,18 @@ public class EnclosManager {
 
     public ArrayList<Enclos> getListeAnimal(){
         return listeEnclos;
+    }
+
+    public boolean updateEnclos(Enclos enclos) {
+        return true;
+    }
+
+    public boolean addEnclos(Enclos enclos) {
+        return true;
+    }
+
+    public boolean deleteEnclos(Enclos enclos) {
+        return true;
     }
 
 }

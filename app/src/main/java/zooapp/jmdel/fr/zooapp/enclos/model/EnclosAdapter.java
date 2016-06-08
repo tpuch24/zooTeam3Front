@@ -1,9 +1,12 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.enclos.model;
 
 import android.content.Context;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import zooapp.jmdel.fr.zooapp.enclos.model.Enclos;
+import zooapp.jmdel.fr.zooapp.model.GenericArrayAdapter;
 
 /**
  * Created by hb on 07/06/2016.
