@@ -2,6 +2,7 @@ package zooapp.jmdel.fr.zooapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -41,6 +42,21 @@ public class FoodDetailActivity extends AppCompatActivity {
                 toast.show();
                 FoodManager.getInstance().suppr_foodlist(food);
                 finish();
+            }
+
+            ;
+        });
+
+        FloatingActionButton edit_foodbt = (FloatingActionButton) findViewById(R.id.edit_food);
+        edit_foodbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //display a toast
+
+                Context context = getApplicationContext();
+                Intent intent = new Intent(FoodDetailActivity.this, FoodUpdateActivity.class);
+                intent.putExtra("food",food);
+                startActivity(intent);
             }
 
             ;

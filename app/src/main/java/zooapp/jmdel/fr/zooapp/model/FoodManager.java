@@ -55,6 +55,17 @@ public class FoodManager {
         }
     }
 
+    public void update_foodlist(Food foodToUpdate){
+
+        for(Food foodItem : liste) {
+            if(foodItem.getName().equals(foodToUpdate.getName())){
+                liste.remove(foodItem);
+                liste.add(foodToUpdate);
+
+            }
+        }
+    }
+
     public ArrayList<Food> getFoodList(){
         return liste;
     }

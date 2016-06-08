@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+android:fitsSystemWindows="true"
+tools:context="zooapp.jmdel.fr.zooapp.FoodUpdateActivity">
+
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical">
+
+    <GridLayout
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:useDefaultMargins="false"
+        android:columnCount="2">
+
+        <!--Put form controls here-->
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_food_name_form"
+            android:textSize="10pt">
+        </TextView>
+        <EditText
+            android:id="@+id/EditTextName"
+            android:layout_height="wrap_content"
+            android:hint="@string/value_food_name_form"
+            android:inputType="textPersonName"
+            android:layout_width="fill_parent">
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_food_type_form"
+            android:textSize="10pt">
+        </TextView>
+        <Spinner
+            android:id="@+id/spinnerTypeeFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/food_type_array"
+            android:prompt="@string/value_food_type_form" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food eater :"
+            android:textSize="10pt">
+        </TextView>
+        <EditText
+            android:id="@+id/EditTextEater"
+            android:layout_height="wrap_content"
+            android:hint="value_food_eater_form"
+            android:inputType="textPersonName"
+            android:layout_width="fill_parent">
+        </EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food stock :"
+            android:textSize="10pt">
+        </TextView>
+        <EditText
+            android:id="@+id/EditDoubleStock"
+            android:layout_height="wrap_content"
+            android:hint="Stock quatity"
+            android:inputType="numberDecimal"
+            android:layout_width="fill_parent">
+        </EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stock unity :"
+            android:textSize="10pt">
+        </TextView>
+        <EditText
+            android:id="@+id/EditStockUnit"
+            android:layout_height="wrap_content"
+            android:hint="for expl : kg, pieces, bottle ..."
+            android:inputType="textPersonName"
+            android:layout_width="fill_parent">
+        </EditText>
+    </GridLayout>
+</ScrollView>
+
+<android.support.design.widget.FloatingActionButton
+    android:id="@+id/update_food"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:layout_margin="8dp"
+    android:src="@android:drawable/ic_menu_save" />
+
+</android.support.design.widget.CoordinatorLayout>
