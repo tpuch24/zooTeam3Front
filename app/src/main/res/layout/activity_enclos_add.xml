@@ -9,9 +9,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".enclos.EnclosUpdateActivity">
 
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:columnCount="2">
 
         <TextView
@@ -45,26 +52,23 @@
             android:inputType="text"
             android:textSize="15dp"/>
     </GridLayout>
+</ScrollView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end">
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/saveEnclos"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:gravity="bottom|end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
             android:layout_margin="8dp"
             android:src="@android:drawable/ic_menu_edit"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/cancelEnclos"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:gravity="bottom|end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
             android:layout_margin="8dp"
             android:src="@android:drawable/ic_menu_close_clear_cancel" />
-    </LinearLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

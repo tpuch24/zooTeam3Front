@@ -42,9 +42,13 @@
             android:name=".AnimalNewActivity"
             android:label="@string/title_activity_animal_new"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".enclos.EnclosDetailActivity" />
-        <activity android:name=".enclos.EnclosUpdateActivity" />
-        <activity android:name=".enclos.EnclosAddActivity"></activity>
+        <activity android:name=".enclos.EnclosDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".enclos.EnclosUpdateActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".enclos.EnclosAddActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
