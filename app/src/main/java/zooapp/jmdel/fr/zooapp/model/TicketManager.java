@@ -1,6 +1,7 @@
 package zooapp.jmdel.fr.zooapp.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TicketManager {
     protected ArrayList<Ticket> list = new ArrayList<>();
@@ -28,4 +29,6 @@ public class TicketManager {
     {
         list.remove(tck);
     }
+
+    public ArrayList<Ticket> getList(){return list;}
 }

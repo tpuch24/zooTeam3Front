@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Etat des ventes de tickets"
+        android:text="Ajout"
         android:id="@+id/textView" />
 
     <TextView

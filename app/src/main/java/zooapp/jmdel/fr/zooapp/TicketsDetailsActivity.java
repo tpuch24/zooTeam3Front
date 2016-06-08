@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import zooapp.jmdel.fr.zooapp.model.Ticket;
+
 public class TicketsDetailsActivity extends AppCompatActivity {
 
     @Override
@@ -15,19 +17,35 @@ public class TicketsDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tickets_details);
 
         Intent intent = getIntent();
-        String str = intent.getStringExtra("reference");
 
-        final TextView txtv = (TextView)findViewById(R.id.textView4);
+        //Put all object in a bundle
+        Bundle extras = intent.getExtras();
 
+        final Ticket ticket = (Ticket) extras.get("reference");
+
+        TextView txtv = (TextView)findViewById(R.id.textView2);
         assert txtv != null;
-        txtv.setText(str);
+        txtv.setText(ticket.getDate());
 
-        FloatingActionButton ticket = (FloatingActionButton) findViewById(R.id.ticketUpdate);
-        assert ticket != null;
-        ticket.setOnClickListener(new View.OnClickListener() {
+        txtv = (TextView)findViewById(R.id.textView3);
+        assert txtv != null;
+        txtv.setText(ticket.getCategory());
+
+        txtv = (TextView)findViewById(R.id.textView4);
+        assert txtv != null;
+        txtv.setText( String.valueOf(ticket.getNumber_sold()));
+
+        txtv = (TextView)findViewById(R.id.textView5);
+        assert txtv != null;
+        txtv.setText(String.valueOf(ticket.getIncome()));
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.ticketUpdate);
+        assert fab != null;
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(TicketsDetailsActivity.this,TicketsUpdateActivity.class);
+                intent.putExtra("reference", ticket);
                 startActivity(intent);
             }
         });

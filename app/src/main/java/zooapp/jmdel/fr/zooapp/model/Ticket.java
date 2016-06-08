@@ -1,8 +1,9 @@
 package zooapp.jmdel.fr.zooapp.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Ticket {
+public class Ticket implements Serializable{
     String category;
     String date;
     int number_sold;
