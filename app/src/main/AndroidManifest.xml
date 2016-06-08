@@ -34,7 +34,18 @@
             android:name=".FoodDetailActivity"
             android:label="@string/title_activity_food_detail"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AnimalDetailActivity"></activity>
+        <activity
+            android:name=".ViewTickets"
+            android:label="@string/title_activity_view_tickets"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddTicket"
+            android:label="@string/title_activity_add_ticket"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TicketDetails"
+            android:label="@string/title_activity_tickets_details"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
