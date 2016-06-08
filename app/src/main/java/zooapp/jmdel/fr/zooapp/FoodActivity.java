@@ -35,8 +35,8 @@ public class FoodActivity extends ListActivity {
         setListAdapter(foodAdapter);
 
 
-        FloatingActionButton addfood = (FloatingActionButton) findViewById(R.id.add_food);
-        addfood.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton add_food = (FloatingActionButton) findViewById(R.id.add_food);
+        add_food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(FoodActivity.this,FoodFormActivity.class);
@@ -54,5 +54,13 @@ public class FoodActivity extends ListActivity {
 
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        foodlist = FoodManager.getInstance().getFoodList();
+        FoodAdapter foodAdapter = new FoodAdapter(this, foodlist);
+        setListAdapter(foodAdapter);
+
+    }
 
 }
