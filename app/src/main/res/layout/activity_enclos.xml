@@ -9,12 +9,24 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:fitsSystemWindows="true"
-    tools:context="zooapp.jmdel.fr.zooapp.EnclosActivity">
+    tools:context=".enclos.EnclosActivity">
 
-    <TextView
-        android:id="@+id/animal_text"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/suppEnclos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wellcome into ZooApp : Enclos" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_animal" />
 
 </android.support.design.widget.CoordinatorLayout>
