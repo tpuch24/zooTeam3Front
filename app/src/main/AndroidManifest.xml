@@ -39,13 +39,17 @@
             android:label="@string/title_activity_view_tickets"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TicketAddActivity"
+            android:name=".TicketsUpdateActivity"
             android:label="@string/title_activity_add_ticket"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TicketDetailsActivity"
+            android:name=".TicketsDetailsActivity"
             android:label="@string/title_activity_tickets_details"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TicketsAddActivity"
+            android:label="@string/title_activity_tickets_add"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

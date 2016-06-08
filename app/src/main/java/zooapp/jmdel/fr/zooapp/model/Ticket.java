@@ -1,36 +1,26 @@
 package zooapp.jmdel.fr.zooapp.model;
 
-import java.util.List;
+import java.util.Date;
 
 public class Ticket {
-    String nom;
-    String prenom;
+    String category;
     String date;
-    Boolean groupe;
-    int tarif;
+    int number_sold;
+    int income;
 
-    public Ticket(String nom, String prenom, String date, boolean groupe, int tarif) {
-        setNom(nom);
-        setPrenom(prenom);
-        setDate(date);
-        setGroupe(groupe);
-        setTarif(tarif);
+    public Ticket(int income, String category, String date, int number_sold) {
+        this.income = income;
+        this.category = category;
+        this.date = date;
+        this.number_sold = number_sold;
     }
 
-    public String getNom() {
-        return nom;
+    public String getCategory() {
+        return category;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getDate() {
@@ -41,19 +31,19 @@ public class Ticket {
         this.date = date;
     }
 
-    public Boolean getGroupe() {
-        return groupe;
+    public int getNumber_sold() {
+        return number_sold;
     }
 
-    public void setGroupe(Boolean groupe) {
-        this.groupe = groupe;
+    public void setNumber_sold(int number_sold) {
+        this.number_sold = number_sold;
     }
 
-    public int getTarif() {
-        return tarif;
+    public int getIncome() {
+        return income;
     }
 
-    public void setTarif(int tarif) {
-        this.tarif = tarif;
+    public void setIncome(int income) {
+        this.income = income;
     }
 }

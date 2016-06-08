@@ -20,23 +20,12 @@ public class TicketManager {
     }
 
     protected void initListe() {
-        list.add(new Ticket("visiteur", "1", "06/06/2016", true, 120));
-        list.add(new Ticket("visiteur", "2", "06/06/2016", false, 12));
-        list.add(new Ticket("visiteur", "3", "06/06/2016", false, 10));
+        list.add(new Ticket(70, "Individuel", "06/06/2016", 10));
+        list.add(new Ticket(150, "Groupe", "06/06/2016", 2));
+        list.add(new Ticket(30, "Enfant", "06/06/2016", 15));
     }
-    public void remove(Ticket tck)
+    public void update(Ticket tck)
     {
         list.remove(tck);
-    }
-
-    public void add(Ticket tck)
-    {
-        list.add(tck);
-    }
-
-    public void add(String nom, String prenom, String date, boolean groupe, int tarif)
-    {
-        Ticket tck = new Ticket(nom, prenom, date, groupe, tarif);
-        add(tck);
     }
 }

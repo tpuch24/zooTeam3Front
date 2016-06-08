@@ -18,31 +18,22 @@ public class TicketsListActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_tickets);
+        setContentView(R.layout.activity_tickets_list);
 
         List<Ticket> list = new ArrayList<>();
-        list.add(new Ticket("visiteur","1","06/06/2016",true, 120));
-        list.add(new Ticket("visiteur","2","06/06/2016",false, 12));
-        list.add(new Ticket("visiteur","3","06/06/2016",false, 10));
+        list.add(new Ticket(70, "Individuel", "06/06/2016", 10));
+        list.add(new Ticket(150, "Groupe", "06/06/2016", 2));
+        list.add(new Ticket(30, "Enfant", "07/06/1702", 15));
 
         ArrayAdapter<Ticket> adapter = new ArrayAdapter<>(this, R.layout.list_item, R.id.text, list);
 
         setListAdapter(adapter);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addticket);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(TicketsListActivity.this,TicketAddActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Intent intent = new Intent(TicketsListActivity.this, TicketDetailsActivity.class);
+        Intent intent = new Intent(TicketsListActivity.this, TicketsDetailsActivity.class);
         intent.putExtra("reference", l.getItemAtPosition(position).toString());
         startActivity(intent);
     }
