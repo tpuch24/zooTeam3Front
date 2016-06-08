@@ -2,9 +2,6 @@ package zooapp.jmdel.fr.zooapp.model;
 
 import java.util.List;
 
-/**
- * Created by User on 07/06/2016.
- */
 public class Ticket {
     String nom;
     String prenom;
@@ -12,11 +9,11 @@ public class Ticket {
     Boolean groupe;
     int tarif;
 
-    public Ticket(String visiteur, String s, String s1, boolean b, int tarif) {
-        setNom(visiteur);
-        setPrenom(s);
-        setDate(s1);
-        setGroupe(b);
+    public Ticket(String nom, String prenom, String date, boolean groupe, int tarif) {
+        setNom(nom);
+        setPrenom(prenom);
+        setDate(date);
+        setGroupe(groupe);
         setTarif(tarif);
     }
 

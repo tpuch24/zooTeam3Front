@@ -24,4 +24,19 @@ public class TicketManager {
         list.add(new Ticket("visiteur", "2", "06/06/2016", false, 12));
         list.add(new Ticket("visiteur", "3", "06/06/2016", false, 10));
     }
+    public void remove(Ticket tck)
+    {
+        list.remove(tck);
+    }
+
+    public void add(Ticket tck)
+    {
+        list.add(tck);
+    }
+
+    public void add(String nom, String prenom, String date, boolean groupe, int tarif)
+    {
+        Ticket tck = new Ticket(nom, prenom, date, groupe, tarif);
+        add(tck);
+    }
 }

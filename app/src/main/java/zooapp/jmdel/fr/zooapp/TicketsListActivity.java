@@ -13,7 +13,7 @@ import java.util.List;
 
 import zooapp.jmdel.fr.zooapp.model.Ticket;
 
-public class ViewTickets extends ListActivity {
+public class TicketsListActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class ViewTickets extends ListActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ViewTickets.this,AddTicket.class);
+                Intent intent=new Intent(TicketsListActivity.this,TicketAddActivity.class);
                 startActivity(intent);
             }
         });
@@ -42,7 +42,7 @@ public class ViewTickets extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Intent intent = new Intent(ViewTickets.this, TicketDetails.class);
+        Intent intent = new Intent(TicketsListActivity.this, TicketDetailsActivity.class);
         intent.putExtra("reference", l.getItemAtPosition(position).toString());
         startActivity(intent);
     }
