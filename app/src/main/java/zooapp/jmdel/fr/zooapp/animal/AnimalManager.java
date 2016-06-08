@@ -56,7 +56,7 @@ public class AnimalManager {
      */
     public Animal getAnimalByName(String name){
         for (Animal animal: liste  ) {
-            if (animal.getName() == name) { return animal;}
+            if (animal.getName().compareTo(name) == 0) { return animal;}
         }
         return null;
     }
@@ -68,7 +68,7 @@ public class AnimalManager {
     public void addNewAnimal(Animal animal){
         for (Animal animalExist: liste  ) {
 
-            if (animalExist.getName() == animal.getName()) { return;}
+            if (animalExist.getName().compareTo(animal.getName()) == 0) { return;}
         }
         liste.add(animal);
     }
@@ -90,14 +90,16 @@ public class AnimalManager {
     }
 
 
-    public void updateAnimal(Animal animal){
-        for (Animal animalExist: this.liste  ) {
-            if (animalExist.getName() == animal.getName()) {
+    public void updateAnimal(Animal animal , Animal animalupdt){
+        for (Animal animalExist: liste  ) {
+            if (animalExist.getName().compareTo(animal.getName()) == 0) {
                 liste.remove(animalExist);
-                liste.add(animal);
+                liste.add(animalupdt);
+                return;
             }
         }
-        liste.add(animal);
     }
+
+
 }
 

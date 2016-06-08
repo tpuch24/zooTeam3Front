@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="16dp"
+android:paddingLeft="16dp"
+android:paddingRight="16dp"
+android:paddingTop="16dp"
+android:fitsSystemWindows="true"
+tools:context=".animal.AnimalDetailActivity">
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical">
+
+    <GridLayout
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+
+        android:layout_alignLeft="@+id/textView"
+        android:useDefaultMargins="false"
+        android:columnCount="2"
+        >
+
+
+        <TextView
+            android:id="@+id/animal_label_updt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+            android:id="@+id/animal_updt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:inputType="textPersonName"/>
+
+        <TextView
+            android:id="@+id/animal_label_updt_specy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/animal_updt_specy"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/animal_label_upd_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/animal_upd_age"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:inputType="textPersonName" />
+
+    </GridLayout>
+</ScrollView>
+
+<android.support.design.widget.FloatingActionButton
+    android:id="@+id/updatebt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:layout_margin="8dp"
+    android:src="@android:drawable/ic_menu_upload" />
+
+</android.support.design.widget.CoordinatorLayout>

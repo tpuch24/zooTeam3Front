@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.animal;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -11,9 +11,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import zooapp.jmdel.fr.zooapp.R;
 import zooapp.jmdel.fr.zooapp.animal.model.Animal;
-import zooapp.jmdel.fr.zooapp.animal.AnimalAdapter;
-import zooapp.jmdel.fr.zooapp.animal.AnimalManager;
 
 /**
  * Activity to show Animal list to be selected

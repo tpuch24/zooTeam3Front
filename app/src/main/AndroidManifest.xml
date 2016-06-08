@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AnimalActivity"
+            android:name=".animal.AnimalActivity"
             android:label="@string/title_activity_animal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -35,13 +35,14 @@
             android:label="@string/title_activity_food_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AnimalDetailActivity"
+            android:name=".animal.AnimalDetailActivity"
             android:label="@string/title_activity_animal_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AnimalNewActivity"
+            android:name=".animal.AnimalNewActivity"
             android:label="@string/title_activity_animal_new"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".animal.AnimalUpdateActivity"></activity>
     </application>
 
 </manifest>

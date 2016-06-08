@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.animal;
 
 import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import zooapp.jmdel.fr.zooapp.R;
 import zooapp.jmdel.fr.zooapp.animal.model.Animal;
 import zooapp.jmdel.fr.zooapp.animal.AnimalManager;
 
@@ -27,17 +28,10 @@ public class AnimalNewActivity extends AppCompatActivity {
         if (button != null) {
             button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Context context = getApplicationContext();
-                    String text = "Ajout d'un animal :";
-                    int duration = Toast.LENGTH_SHORT;
 
                     String name =  ((EditText)(findViewById(R.id.animal_new_name))).getText().toString();
                     String specy =  ((EditText)(findViewById(R.id.animal_new_speci))).getText().toString();
                     String age = ((EditText)(findViewById(R.id.animal_new_age))).getText().toString();
-                    text+= "Name: "+name+ " - specy: "+specy+" - age: "+ age;
-
-                    Toast toast = Toast.makeText(context, (CharSequence) text, duration);
-                    toast.show();
 
                     int ageint=0;
                     ageint = Integer.parseInt(age);
