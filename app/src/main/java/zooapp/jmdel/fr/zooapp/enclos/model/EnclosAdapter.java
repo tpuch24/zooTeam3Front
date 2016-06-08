@@ -22,6 +22,7 @@ public class EnclosAdapter extends GenericArrayAdapter<Enclos> {
         textView.setText(object.getId()
                 + " - " + object.getNom()
                 + " - " + object.getNbAnimal()
-                + " - " + object.getNbAnimalMax());
+                + " - " + object.getNbAnimalMax()
+                + " - " + object.getType());
     }
 }

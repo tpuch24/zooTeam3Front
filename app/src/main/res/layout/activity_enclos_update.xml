@@ -37,12 +37,21 @@
             android:width="100dp"
             android:height="30dp"
             android:text="Nb animaux : "/>
-    <EditText
-        android:id="@+id/nbAnimaux"
-        android:width="200dp"
-        android:height="30dp"
-        android:inputType="text"
-        android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/nbAnimaux"
+            android:width="200dp"
+            android:height="30dp"
+            android:inputType="text"
+            android:textSize="15dp"/>
+        <TextView
+            android:width="100dp"
+            android:height="30dp"
+            android:text="Type : "/>
+        <Spinner
+            android:id="@+id/type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Spinner"/>
     </GridLayout>
 
     <LinearLayout

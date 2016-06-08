@@ -6,11 +6,17 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import zooapp.jmdel.fr.zooapp.R;
 import zooapp.jmdel.fr.zooapp.enclos.model.Enclos;
+import zooapp.jmdel.fr.zooapp.enclos.model.EnclosAdapter;
+import zooapp.jmdel.fr.zooapp.enclos.model.EnclosManager;
+import zooapp.jmdel.fr.zooapp.enclos.model.TypeEnclosAdapter;
 
 public class EnclosDetailActivity extends AppCompatActivity {
 
@@ -25,6 +31,8 @@ public class EnclosDetailActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.idEnclos)).setText(enclo.getIdString());
         ((TextView)findViewById(R.id.nom)).setText(enclo.getNom());
         ((TextView)findViewById(R.id.nbAnimaux)).setText(enclo.getNbAnimalString());
+        ((TextView)findViewById(R.id.type)).setText(enclo.getType());
+
 
         FloatingActionButton updateEnclos = (FloatingActionButton) findViewById(R.id.updateEnclos);
         updateEnclos.setOnClickListener(new View.OnClickListener() {

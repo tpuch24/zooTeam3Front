@@ -12,15 +12,25 @@ public class Enclos implements Serializable {
     private String nom;
     private int nbAnimal;
     private int nbAnimalMax;
+    private String type;
 
 
-    public Enclos(String nom, int nbAnimal, int nbAnimalMax) {
+    public Enclos(String nom, int nbAnimal, int nbAnimalMax, String type) {
         this.nom = nom;
         this.nbAnimal = nbAnimal;
         this.nbAnimalMax = nbAnimalMax;
+        this.type = type;
     }
 
     public Enclos() {
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getId() {

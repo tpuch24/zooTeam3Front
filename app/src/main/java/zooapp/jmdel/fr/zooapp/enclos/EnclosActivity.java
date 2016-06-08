@@ -17,7 +17,7 @@ import zooapp.jmdel.fr.zooapp.enclos.model.EnclosManager;
 
 public class EnclosActivity extends ListActivity {
 
-    ArrayList<Enclos> enclos = EnclosManager.getInstance().getListeAnimal();
+    ArrayList<Enclos> enclos = EnclosManager.getInstance().getListeEnclos();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
