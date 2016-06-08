@@ -11,18 +11,47 @@
     android:fitsSystemWindows="true"
     tools:context="zooapp.jmdel.fr.zooapp.AnimalDetailActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/animal_label_name"
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollView01"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/animal_detail_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+    <GridLayout
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+
+        android:layout_alignLeft="@+id/textView"
+        android:useDefaultMargins="false"
+        android:columnCount="2"
+        >
+        <TextView
+            android:id="@+id/animal_label_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/animal_detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/animal_label_specy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/animal_detail_specy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/animal_label_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/animal_detail_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </GridLayout>
+    </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/removebt"
@@ -30,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="8dp"
+        android:onClick="clickDeleteMethod"
         android:src="@android:drawable/ic_delete" />
 
 </android.support.design.widget.CoordinatorLayout>

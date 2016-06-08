@@ -5,21 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import zooapp.jmdel.fr.zooapp.model.Animal;
-import zooapp.jmdel.fr.zooapp.model.AnimalAdapter;
-import zooapp.jmdel.fr.zooapp.model.AnimalManager;
+import zooapp.jmdel.fr.zooapp.animal.model.Animal;
+import zooapp.jmdel.fr.zooapp.animal.AnimalAdapter;
+import zooapp.jmdel.fr.zooapp.animal.AnimalManager;
 
 /**
  * Activity to show Animal list to be selected
@@ -46,7 +40,7 @@ public class AnimalActivity extends ListActivity {
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
-                Intent intent=new Intent(AnimalActivity.this,AnimalNewActivity.class);
+                Intent intent = new Intent(AnimalActivity.this,AnimalNewActivity.class);
                 startActivity(intent);
             }
         }) ;
@@ -59,8 +53,13 @@ public class AnimalActivity extends ListActivity {
         Intent intent = new Intent(this,AnimalDetailActivity.class);
         intent.putExtra("animal",animals.get(position));
         startActivity(intent);
-
     }
 
-
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        animals = AnimalManager.getInstance().getListeAnimal();
+        AnimalAdapter animalAdapter = new AnimalAdapter(this, animals);
+        setListAdapter(animalAdapter);
+    }
 }

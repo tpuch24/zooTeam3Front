@@ -9,10 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import zooapp.jmdel.fr.zooapp.model.Animal;
-import zooapp.jmdel.fr.zooapp.model.AnimalManager;
+import zooapp.jmdel.fr.zooapp.animal.model.Animal;
+import zooapp.jmdel.fr.zooapp.animal.AnimalManager;
 
 public class AnimalNewActivity extends AppCompatActivity {
 
@@ -45,7 +43,7 @@ public class AnimalNewActivity extends AppCompatActivity {
                     ageint = Integer.parseInt(age);
 
                     AnimalManager.getInstance().addNewAnimal(new Animal(ageint, specy, name));
-
+                    finish();
                 }
             }) ;
         }

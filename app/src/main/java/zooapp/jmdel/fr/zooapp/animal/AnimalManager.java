@@ -1,7 +1,13 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.animal;
+
+import android.content.Context;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import zooapp.jmdel.fr.zooapp.R;
+import zooapp.jmdel.fr.zooapp.animal.model.Animal;
 
 /**
  * Created by Thierry on 06/06/2016.
@@ -49,7 +55,7 @@ public class AnimalManager {
      * @return  animal who have "name" - null if notexist
      */
     public Animal getAnimalByName(String name){
-        for (Animal animal: this.liste  ) {
+        for (Animal animal: liste  ) {
             if (animal.getName() == name) { return animal;}
         }
         return null;
@@ -60,7 +66,8 @@ public class AnimalManager {
      * @param animal
      */
     public void addNewAnimal(Animal animal){
-        for (Animal animalExist: this.liste  ) {
+        for (Animal animalExist: liste  ) {
+
             if (animalExist.getName() == animal.getName()) { return;}
         }
         liste.add(animal);
@@ -71,11 +78,15 @@ public class AnimalManager {
      * @param animal
      */
     public void removeAnimal(Animal animal){
-        for (Animal animalExist: this.liste  ) {
-            if (animalExist.getName() == animal.getName()) {
-                liste.remove(animalExist);}
+
+        //Context context = getApplicationContext();
+
+        for (Animal animalExist: liste  ) {
+            if (animalExist.getName().compareTo(animal.getName()) == 0) {
+                liste.remove(animalExist);
+              return;
+            }
         }
-        liste.add(animal);
     }
 
 

@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.animal.model;
 
 import android.os.Parcelable;
 
