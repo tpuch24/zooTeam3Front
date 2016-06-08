@@ -33,8 +33,8 @@ public class FoodManager {
         liste.add(food);
     }
 
-    public void addFoodlist(Food foodToAdd){
-        ArrayList<Food> listeCopy = new ArrayList<Food>();
+    public void add_foodlist(Food foodToAdd){
+
         for(Food foodItem : liste) {
             if(foodItem.getName().equals(foodToAdd.getName())){
                 //exist
@@ -44,6 +44,15 @@ public class FoodManager {
         //only excuted if not exists
         liste.add(foodToAdd);
 
+    }
+    public void suppr_foodlist(Food foodToSuppr){
+
+        for(Food foodItem : liste) {
+            if(foodItem.getName().equals(foodToSuppr.getName())){
+                liste.remove(foodItem);
+
+            }
+        }
     }
 
     public ArrayList<Food> getFoodList(){

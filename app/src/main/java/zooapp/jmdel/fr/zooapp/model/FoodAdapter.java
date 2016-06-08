@@ -15,6 +15,7 @@ public class FoodAdapter extends GenericArrayAdapter<Food> {
 
     @Override
     public void drawText(TextView textView, Food object) {
-        textView.setText(object.getName()+" - "+ object.getType());
+        String listItemLine = object.getName()+" : "+ object.getStock().toString()+" "+ object.getUnity();
+        textView.setText(listItemLine);
     }
 }
