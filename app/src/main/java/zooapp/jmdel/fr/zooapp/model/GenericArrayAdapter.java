@@ -25,7 +25,7 @@ public abstract class GenericArrayAdapter<T> extends ArrayAdapter<T> {
     }
 
     // Headers
-    public abstract void drawText(TextView textView, T object);
+    public abstract void drawText(TextView LtextView, T object);
 
     private void init(Context context) {
         this.mInflater = LayoutInflater.from(context);

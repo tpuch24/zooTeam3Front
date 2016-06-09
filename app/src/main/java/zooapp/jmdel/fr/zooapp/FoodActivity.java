@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +34,10 @@ public class FoodActivity extends ListActivity {
 
         FoodAdapter foodAdapter = new FoodAdapter(this, foodlist);
         setListAdapter(foodAdapter);
-
-
+/*
+        ((TextView) (findViewById(R.id.food_detail_name))).setText(food.getName().toString());
+        ((TextView) (findViewById(R.id.food_detail_type))).setText(food.getType().toString());
+*/
         FloatingActionButton add_food = (FloatingActionButton) findViewById(R.id.add_food);
         add_food.setOnClickListener(new View.OnClickListener() {
             @Override
