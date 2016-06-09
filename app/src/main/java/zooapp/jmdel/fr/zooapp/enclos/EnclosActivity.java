@@ -42,7 +42,8 @@ public class EnclosActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
             Intent intent = new Intent(this,EnclosDetailActivity.class);
-            intent.putExtra("enclot",enclos.get(position));
+            Enclos enclot = EnclosManager.getInstance().getEnclos(enclos.get(position));
+            intent.putExtra("enclot",enclot);
             startActivity(intent);
     }
 

@@ -64,7 +64,7 @@ public class EnclosUpdateActivity extends AppCompatActivity {
         ((EditText)findViewById(R.id.nbAnimaux)).setText(enclos.getNbAnimalString());
 
         Spinner spinner = (Spinner) findViewById(R.id.type);
-        EnclosManager.getInstance().initListeType();
+        EnclosManager.getInstance().getListeTypeEnclos();
         ArrayList<String> typeEnclos = EnclosManager.getInstance().getListeTypeEnclos();
         TypeEnclosAdapter typeEnclosAdapter = new TypeEnclosAdapter(this, typeEnclos);
         typeEnclosAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

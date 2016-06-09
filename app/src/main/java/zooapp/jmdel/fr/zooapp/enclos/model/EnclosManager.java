@@ -12,7 +12,7 @@ public class EnclosManager {
 
     private EnclosManager() {
         super();
-        initListe();
+    //    initListe();
     }
 
     public static EnclosManager getInstance(){
@@ -23,38 +23,41 @@ public class EnclosManager {
         return instEnclos;
     }
 
-    protected void initListe(){
-        Enclos enclos = new Enclos( "Enclos des lions", 3, 7, "Carnivores");
+    private void initListe(){
+        listeEnclos.clear();
+        Enclos enclos = new Enclos( "Enclos des lions", 3, 7, "Cage");
         enclos.setId(1);
         listeEnclos.add(enclos);
-        enclos = new Enclos("Enclos des oiseaux", 8, 12, "Oiseaux");
+        enclos = new Enclos("Enclos des oiseaux", 8, 12, "Volière");
         enclos.setId(5);
         listeEnclos.add(enclos);
-        enclos = new Enclos("Parc des reptiles", 40, 60, "Reptiles");
+        enclos = new Enclos("Parc des reptiles", 40, 60, "Vivarium");
         enclos.setId(6);
         listeEnclos.add(enclos);
-        enclos = new Enclos("Enclos nord", 0, 10, "Mixte");
+        enclos = new Enclos("Enclos nord", 0, 10, "Enclos");
         listeEnclos.add(enclos);
         enclos.setId(9);
     }
 
-    public void initListeType(){
+    private void initListeType(){
         listeTypeEnclos.clear();
-        String type = new String( "Carnivores");
+        String type = new String("Cage");
         listeTypeEnclos.add(type);
-        type = "Mixte";
+        type = "Enclos";
         listeTypeEnclos.add(type);
-        type = "Oiseaux";
+        type = "Vivarium";
         listeTypeEnclos.add(type);
-        type = "Reptiles";
+        type = "Volière";
         listeTypeEnclos.add(type);
     }
 
     public ArrayList<Enclos> getListeEnclos(){
+        initListe();
         return listeEnclos;
     }
 
     public ArrayList<String> getListeTypeEnclos(){
+        initListeType();
         return listeTypeEnclos;
     }
 
@@ -68,6 +71,10 @@ public class EnclosManager {
 
     public boolean deleteEnclos(Enclos enclos) {
         return true;
+    }
+
+    public Enclos getEnclos(Enclos enclos) {
+        return enclos;
     }
 
 }
