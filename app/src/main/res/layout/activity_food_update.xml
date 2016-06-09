@@ -27,6 +27,7 @@ tools:context="zooapp.jmdel.fr.zooapp.FoodUpdateActivity">
         android:columnCount="2">
 
         <!--Put form controls here-->
+        <!-- Name of food-->
         <TextView
 
             android:layout_width="wrap_content"
@@ -34,32 +35,34 @@ tools:context="zooapp.jmdel.fr.zooapp.FoodUpdateActivity">
             android:text="@string/label_food_name_form"
             android:textSize="10pt">
         </TextView>
-        <EditText
-            android:id="@+id/EditTextName"
+        <TextView
+            android:id="@+id/FixedFoodName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/value_food_name_form"
-            android:inputType="textPersonName"
-            android:layout_width="fill_parent">
-        </EditText>
-
+            android:textSize="10pt">
+        </TextView>
+        <!-- Spiner Type of food-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_food_type_form"
             android:textSize="10pt">
         </TextView>
+
         <Spinner
             android:id="@+id/spinnerTypeeFood"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/food_type_array"
             android:prompt="@string/value_food_type_form" />
+        <!-- Eater of food-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Food eater :"
             android:textSize="10pt">
         </TextView>
+
         <EditText
             android:id="@+id/EditTextEater"
             android:layout_height="wrap_content"
@@ -67,12 +70,14 @@ tools:context="zooapp.jmdel.fr.zooapp.FoodUpdateActivity">
             android:inputType="textPersonName"
             android:layout_width="fill_parent">
         </EditText>
+        <!-- Qantity of food-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Food stock :"
             android:textSize="10pt">
         </TextView>
+
         <EditText
             android:id="@+id/EditDoubleStock"
             android:layout_height="wrap_content"
@@ -80,6 +85,7 @@ tools:context="zooapp.jmdel.fr.zooapp.FoodUpdateActivity">
             android:inputType="numberDecimal"
             android:layout_width="fill_parent">
         </EditText>
+        <!-- Unity of qty -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,7 +103,7 @@ tools:context="zooapp.jmdel.fr.zooapp.FoodUpdateActivity">
 </ScrollView>
 
 <android.support.design.widget.FloatingActionButton
-    android:id="@+id/update_food"
+    android:id="@+id/update_food_bt"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom|end"

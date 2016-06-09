@@ -11,9 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import zooapp.jmdel.fr.zooapp.model.Food;
+import zooapp.jmdel.fr.zooapp.model.FoodAdapter;
 import zooapp.jmdel.fr.zooapp.model.FoodManager;
 
 public class FoodDetailActivity extends AppCompatActivity {
+    protected Food food=null ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,20 +23,14 @@ public class FoodDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_detail);
 
         Bundle extra = getIntent().getExtras();
-        final Food food = (Food) extra.getSerializable("food");
-        String content = "Name :  " + food.getName() + " \n" +
-                "Type :  " + food.getType() + " \n " +
-                "Eater : " + food.getEater_type() + " \n " +
-                "Stock : " + food.getStock() + " " + food.getUnity();
-
-        ((TextView) (findViewById(R.id.food_detail_text))).setText(content);
+        food = (Food) extra.getSerializable("food");
+        setContent();
 
         FloatingActionButton supprfoodbt = (FloatingActionButton) findViewById(R.id.suppr_food);
         supprfoodbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //display a toast
-
                 Context context = getApplicationContext();
                 int duration = Toast.LENGTH_LONG;
                 String text = "Food Removed";
@@ -63,4 +59,22 @@ public class FoodDetailActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        food  = FoodManager.getInstance().find_by_foodname(food.getName());
+        if (food != null){
+            setContent();
+        }
+    }
+
+    private void setContent(){
+        String content =
+                "Name :  " + food.getName() + " \n" +
+                "Type :  " + food.getType() + " \n " +
+                "Eater : " + food.getEater_type() + " \n " +
+                "Stock : " + food.getStock() + " " + food.getUnity();
+
+        ((TextView) (findViewById(R.id.food_detail_text))).setText(content);
+    }
 }

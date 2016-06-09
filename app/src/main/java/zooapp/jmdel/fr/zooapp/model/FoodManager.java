@@ -48,7 +48,7 @@ public class FoodManager {
     public void suppr_foodlist(Food foodToSuppr){
 
         for(Food foodItem : liste) {
-            if(foodItem.getName().equals(foodToSuppr.getName())){
+            if(foodItem.getName().compareTo(foodToSuppr.getName()) == 0){
                 liste.remove(foodItem);
 
             }
@@ -56,14 +56,25 @@ public class FoodManager {
     }
 
     public void update_foodlist(Food foodToUpdate){
-
+        int index = -1;
         for(Food foodItem : liste) {
-            if(foodItem.getName().equals(foodToUpdate.getName())){
-                liste.remove(foodItem);
-                liste.add(foodToUpdate);
-
+            index++;
+            if(foodItem.getName().compareTo(foodToUpdate.getName()) == 0){
+                liste.set(index,foodToUpdate);
             }
         }
+    }
+
+    public Food find_by_foodname(String foodName){
+
+        for(Food foodItem : liste) {
+
+            if(foodItem.getName().equals(foodName)){
+                return(foodItem);
+            }
+        }
+        return (null);
+
     }
 
     public ArrayList<Food> getFoodList(){

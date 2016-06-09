@@ -50,16 +50,8 @@ public class FoodFormActivity extends AppCompatActivity {
                         ((TextView) (findViewById(R.id.EditTextEater))).getText().toString()
                 );
                 FoodManager.getInstance().add_foodlist(foodToAdd);
+                finish();
 
-                //show the list
-                FloatingActionButton savefood = (FloatingActionButton) findViewById(R.id.save_food);
-                savefood.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(FoodFormActivity.this, FoodActivity.class);
-                        startActivity(intent);
-                    }
-                });
 
             };
         });
