@@ -33,11 +33,27 @@ public class AnimalNewActivity extends AppCompatActivity {
                     String specy =  ((EditText)(findViewById(R.id.animal_new_speci))).getText().toString();
                     String age = ((EditText)(findViewById(R.id.animal_new_age))).getText().toString();
 
-                    int ageint=0;
-                    ageint = Integer.parseInt(age);
+                    Context context = getApplicationContext();
+                    String text = "Danger: "+"name: "+name+" - specy: "+specy+" - age: "+age;
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, (CharSequence) text, duration);
+                    toast.show();
 
-                    AnimalManager.getInstance().addNewAnimal(new Animal(ageint, specy, name));
-                    finish();
+                    if ((name == "" ) || (name == null ) || (specy =="") || (specy == null) || (age == null)){
+                         context = getApplicationContext();
+                         text = "Tous les champs sont obligatoires !!!";
+                         duration = Toast.LENGTH_SHORT;
+                         toast = Toast.makeText(context, (CharSequence) text, duration);
+                        toast.show();
+                        return;
+                    }
+                    else {
+                        int ageint = 0;
+                        ageint = Integer.parseInt(age);
+
+                        AnimalManager.getInstance().addNewAnimal(new Animal(ageint, specy, name));
+                        finish();
+                    }
                 }
             }) ;
         }

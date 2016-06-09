@@ -1,13 +1,17 @@
 package zooapp.jmdel.fr.zooapp;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Display;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import zooapp.jmdel.fr.zooapp.animal.AnimalActivity;
@@ -28,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent=new Intent(MainActivity.this,AnimalActivity.class);
                 startActivity(intent);
-                //((TextView)findViewById(R.id.message)).setText("Animals");
-               // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-               //         .setAction("Action", null).show();
             }
         });
 

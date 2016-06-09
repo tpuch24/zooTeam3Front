@@ -49,7 +49,8 @@
         <TextView
             android:id="@+id/animal_detail_age"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
     </GridLayout>
     </ScrollView>
 

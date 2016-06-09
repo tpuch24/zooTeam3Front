@@ -21,7 +21,55 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scrollbars="vertical">
+
+        <GridLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+
+            android:layout_alignLeft="@+id/textView"
+            android:useDefaultMargins="true"
+            android:columnCount="2"
+            android:rowCount="2"
+            >
+
+            <ImageView
+                android:id="@+id/imageViewAnimal"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/animal_img"/>
+            <ImageView
+                android:id="@+id/imageViewFood"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/food_imd"/>/>
+            <ImageView
+                android:id="@+id/imageViewEnclos"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/enclos_img"/>
+            <ImageView
+                android:id="@+id/imageViewTicket"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/tickets_img"/>
+
+        </GridLayout>
+    </ScrollView>
+
+
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

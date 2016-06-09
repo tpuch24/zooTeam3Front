@@ -57,7 +57,7 @@ tools:context=".animal.AnimalDetailActivity">
             android:id="@+id/animal_upd_age"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
 
     </GridLayout>
 </ScrollView>

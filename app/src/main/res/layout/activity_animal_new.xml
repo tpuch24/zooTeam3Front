@@ -50,14 +50,14 @@
                 android:inputType="textPersonName" />
 
             <TextView
-            android:id="@+id/animal_new_label_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                android:id="@+id/animal_new_label_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/animal_new_age"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:inputType="textPersonName" />
+                android:inputType="number" />
 
         </GridLayout>
     </ScrollView>
