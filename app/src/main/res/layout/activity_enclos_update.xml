@@ -41,7 +41,7 @@
             android:id="@+id/nbAnimaux"
             android:width="200dp"
             android:height="30dp"
-            android:inputType="text"
+            android:inputType="number"
             android:textSize="15dp"/>
         <TextView
             android:width="100dp"

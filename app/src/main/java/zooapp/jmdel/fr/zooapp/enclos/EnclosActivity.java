@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -45,4 +46,12 @@ public class EnclosActivity extends ListActivity {
             startActivity(intent);
     }
 
-}
+    protected void onRestart() {
+        super.onRestart();
+        enclos = EnclosManager.getInstance().getListeEnclos();
+        EnclosAdapter enclosAdapter = new EnclosAdapter(this, enclos);
+        setListAdapter(enclosAdapter);
+//        Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_LONG).show();
+    }
+
+    }

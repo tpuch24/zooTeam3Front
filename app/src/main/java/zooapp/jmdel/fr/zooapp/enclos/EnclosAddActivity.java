@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import zooapp.jmdel.fr.zooapp.R;
+import zooapp.jmdel.fr.zooapp.enclos.model.Enclos;
 import zooapp.jmdel.fr.zooapp.enclos.model.EnclosManager;
 import zooapp.jmdel.fr.zooapp.enclos.model.TypeEnclosAdapter;
 
@@ -40,8 +41,17 @@ fillActivity();            }
                 // Appel du service d'insertion
                 // Fermeture de l'activity et appel de l'activity de détail
                 // Avec l'enregistrement en cours
-                Snackbar.make(view, "Ajout d'enclos à coder", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Enclos enclos = new Enclos();
+                fillEnclos(enclos);
+                if (enclos.addEnclos()) {
+                    Snackbar.make(view, "Création bien effectuée", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+
+                    EnclosAddActivity.this.finish();
+                } else {
+                    Snackbar.make(view,"La création a échoué", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
             }
         });
     }
@@ -57,7 +67,13 @@ fillActivity();            }
         TypeEnclosAdapter typeEnclosAdapter = new TypeEnclosAdapter(this, typeEnclos);
         typeEnclosAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(typeEnclosAdapter);
-        // Positionnement sur la bonne valeur
+    }
+
+    private void fillEnclos(Enclos enclos) {
+//        enclos.setIdString((String)((TextView)findViewById(R.id.idEnclos)).getText());
+        enclos.setNbAnimalString( ((EditText)findViewById(R.id.nbAnimaux)).getText().toString());
+        enclos.setNom( ((EditText)findViewById(R.id.nom)).getText().toString());
+        enclos.setType(((Spinner)findViewById(R.id.type)).getSelectedItem().toString());
     }
 
 }

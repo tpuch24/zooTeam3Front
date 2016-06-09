@@ -44,14 +44,15 @@ public class EnclosUpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Appel du service d'update
-
                 Enclos enclos = new Enclos();
- //               enclos.setNom((String)((TextView) findViewById(R.id.nom)).getText());
-//        enclos.setType((String)((Spinner)findViewById(R.id.type)).getSelectedItem());
                 fillEnclos(enclos);
-
-                Snackbar.make(view, enclos.getType(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if (enclos.updateEnclos()) {
+                    Snackbar.make(view, "Modification bien effectuée", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else {
+                    Snackbar.make(view,"La modification a échoué", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
             }
         });
     }
