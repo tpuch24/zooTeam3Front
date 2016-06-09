@@ -7,42 +7,48 @@ public class TicketManager {
     protected ArrayList<Ticket> list = new ArrayList<>();
     protected static TicketManager instance;
 
-    private TicketManager(){
+    private TicketManager()
+    {
         super();
         initListe();
     }
 
-    public static TicketManager getInstance(){
-
+    public static TicketManager getInstance()
+    {
         if (instance==null){
             instance = new TicketManager();
         }
         return instance;
     }
 
-    public Ticket getOne(int id){
-        for (Ticket t: list)
-        {
-            //find the ticket to remove
-            if(t.id==id)
-            {
-                return t;
-            }
-        }
-        return null;
+    void initListe()
+    {
+        list.add(new Ticket(70, "Individuel", "06/06/2016", 10));
+        list.add(new Ticket(150, "Groupe", "06/06/2016", 2));
+        list.add(new Ticket(30, "Enfant", "06/06/2016", 15));
+    }
+    public void add(Ticket tck)
+    {
+        list.add(tck);
     }
 
-    protected void initListe() {
-        list.add(new Ticket(1, 70, "Individuel", "06/06/2016", 10));
-        list.add(new Ticket(2, 150, "Groupe", "06/06/2016", 2));
-        list.add(new Ticket(3, 30, "Enfant", "06/06/2016", 15));
-    }
-    public void update(Ticket tck)
+    public void update(int id, Ticket tck)
     {
-        Ticket t = getOne(tck.id);
-                list.remove(t);
-                list.add(tck);
-        //list.indexOf()
+        list.set(id, tck);
     }
-    public ArrayList<Ticket> getList(){return list;}
+
+    public void remove(int id)
+    {
+        list.remove(id);
+    }
+
+    public ArrayList<Ticket> getList()
+    {
+        return list;
+    }
+
+    public Ticket getOneById(int pos)
+    {
+        return list.get(pos);
+    }
 }

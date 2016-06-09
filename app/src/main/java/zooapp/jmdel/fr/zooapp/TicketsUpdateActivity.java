@@ -16,6 +16,7 @@ import zooapp.jmdel.fr.zooapp.model.TicketManager;
 public class TicketsUpdateActivity extends AppCompatActivity {
 
     Ticket ticket = null;
+    int id =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,9 @@ public class TicketsUpdateActivity extends AppCompatActivity {
         //Put all object in a bundle
         Bundle extras = intent.getExtras();
 
-        ticket = (Ticket) extras.get("reference");
+
+        id=(int) extras.get("reference");
+        ticket = TicketManager.getInstance().getOneById(id);
 
         TextView txtv = (TextView)findViewById(R.id.textView2);
         assert txtv != null;
@@ -68,21 +71,39 @@ public class TicketsUpdateActivity extends AppCompatActivity {
                        .setAction("Action", null).show();
 
                 EditText txtv = (EditText)findViewById(R.id.editText);
-                assert txtv != null;
-                String str = txtv.getText().toString();
-                int i=Integer.valueOf(str);
-                ticket.setNumber_sold(i);
+
+                if(txtv.getText().toString().length()!=0)
+                {
+                    int i=Integer.valueOf(txtv.getText().toString());
+                    ticket.setNumber_sold(i);
+                }
+                else
+                {
+                    error(view, "3e champ vide ! Veuillez saisir un nombre de ticket vendu");
+                    return;
+                }
 
                 txtv = (EditText)findViewById(R.id.editText2);
-                assert txtv != null;
-                ticket.setIncome(Integer.valueOf(txtv.getText().toString()));
+                if(txtv.getText().toString().length()!=0)
+                {
+                    ticket.setIncome(Integer.valueOf(txtv.getText().toString()));
+                }
+                else
+                {
+                    error(view, "4e champ vide ! Veuillez saisir la recette");
+                    return;
+                }
 
-                TicketManager tckmng = TicketManager.getInstance();
-
-                tckmng.update(ticket);
+                TicketManager.getInstance().update(id,ticket);
 
                 finish();
             }
         });
     }
+    void error(View view, String str)
+    {
+        Snackbar.make(view, str, Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+    }
+
 }

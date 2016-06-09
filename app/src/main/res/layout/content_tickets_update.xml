@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:text="Nombre"
+        android:hint="Nombre"
         android:ems="10"
         android:id="@+id/editText"
         android:layout_below="@+id/textView3" />
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:text="Chiffre d'affaire"
+        android:hint="Recette"
         android:ems="10"
         android:id="@+id/editText2"
         android:layout_below="@+id/editText" />

@@ -20,44 +20,44 @@
         android:text="Ajout"
         android:id="@+id/textView" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Date"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Type de ticket"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/textView2" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:text="Nombre"
+        android:inputType="date"
+        android:hint="Date"
         android:ems="10"
         android:id="@+id/editText"
-        android:layout_below="@+id/textView3" />
+        android:layout_below="@+id/textView" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:text="Chiffre d'affaire"
+        android:hint="Type"
         android:ems="10"
         android:id="@+id/editText2"
         android:layout_below="@+id/editText" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Nombre"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/editText2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Recette"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:layout_below="@+id/editText3" />
+
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/ticketUpdate"
+        android:id="@+id/ticketAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

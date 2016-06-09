@@ -41,7 +41,7 @@ public class TicketsListActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Intent intent = new Intent(TicketsListActivity.this, TicketsDetailsActivity.class);
-        intent.putExtra("reference", ticketslist.get(position).);
+        intent.putExtra("reference", position);
         startActivity(intent);
     }
     private void setDatas()
@@ -53,5 +53,16 @@ public class TicketsListActivity extends ListActivity {
         TicketAdapter ticketAdapter = new TicketAdapter(this, ticketslist);
 
         setListAdapter(ticketAdapter);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addticket);
+        assert fab != null;
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(TicketsListActivity.this,TicketsAddActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

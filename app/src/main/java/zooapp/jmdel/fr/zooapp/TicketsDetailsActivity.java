@@ -8,8 +8,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import zooapp.jmdel.fr.zooapp.model.Ticket;
+import zooapp.jmdel.fr.zooapp.model.TicketManager;
 
 public class TicketsDetailsActivity extends AppCompatActivity {
+
+    Ticket ticket = null;
+    int id = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +37,8 @@ public class TicketsDetailsActivity extends AppCompatActivity {
         //Put all object in a bundle
         Bundle extras = intent.getExtras();
 
-        final Ticket ticket = (Ticket) extras.get("reference");
+        id=(int) extras.get("reference");
+        Ticket ticket = TicketManager.getInstance().getOneById(id);
 
         TextView txtv = (TextView)findViewById(R.id.textView2);
         assert txtv != null;
@@ -57,7 +62,9 @@ public class TicketsDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(TicketsDetailsActivity.this,TicketsUpdateActivity.class);
-                intent.putExtra("reference", ticket);
+
+                Bundle extras = intent.getExtras();
+                intent.putExtra("reference", id);
                 startActivity(intent);
             }
         });
