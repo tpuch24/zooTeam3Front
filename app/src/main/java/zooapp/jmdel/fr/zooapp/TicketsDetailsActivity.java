@@ -16,6 +16,18 @@ public class TicketsDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tickets_details);
 
+     //   setData();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setContentView(R.layout.activity_tickets_details);
+
+        setData();
+    }
+
+    private void setData(){
         Intent intent = getIntent();
 
         //Put all object in a bundle

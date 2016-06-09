@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import zooapp.jmdel.fr.zooapp.model.Ticket;
+import zooapp.jmdel.fr.zooapp.model.TicketManager;
 
 public class TicketsUpdateActivity extends AppCompatActivity {
 
@@ -20,6 +21,17 @@ public class TicketsUpdateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tickets_update);
+        setDatas();
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setContentView(R.layout.activity_tickets_update);
+        setDatas();
+    }
+
+    private void setDatas()
+    {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -57,15 +69,20 @@ public class TicketsUpdateActivity extends AppCompatActivity {
 
                 EditText txtv = (EditText)findViewById(R.id.editText);
                 assert txtv != null;
-                ticket.setNumber_sold(Integer.getInteger(txtv.getText().toString()));
+                String str = txtv.getText().toString();
+                int i=Integer.valueOf(str);
+                ticket.setNumber_sold(i);
 
                 txtv = (EditText)findViewById(R.id.editText2);
                 assert txtv != null;
-                ticket.setIncome(Integer.getInteger(txtv.getText().toString()));
+                ticket.setIncome(Integer.valueOf(txtv.getText().toString()));
 
+                TicketManager tckmng = TicketManager.getInstance();
+
+                tckmng.update(ticket);
+
+                finish();
             }
         });
-
     }
-
 }

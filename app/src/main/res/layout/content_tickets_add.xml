@@ -58,10 +58,12 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/ticketUpdate"
-        android:layout_below="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="67dp" />
 
 </RelativeLayout>
