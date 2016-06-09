@@ -27,19 +27,15 @@ public class EnclosActivity extends ListActivity {
         EnclosAdapter enclosAdapter = new EnclosAdapter(this, enclos);
         setListAdapter(enclosAdapter);
 
-        FloatingActionButton suppEnclos = (FloatingActionButton) findViewById(R.id.suppEnclos);
-        suppEnclos.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton newEnclos = (FloatingActionButton) findViewById(R.id.newEnclos);
+        newEnclos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Suppression d'enclos", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(EnclosActivity.this,EnclosAddActivity.class);
+                startActivity(intent);
             }
         });
     }
-
-//    protected void onResume (Bundle savedInstanceState) {
-//
-//    }
 
         @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {

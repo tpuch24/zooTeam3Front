@@ -65,12 +65,20 @@ public class Enclos implements Serializable {
         this.nom = nom;
     }
 
+    public void setIdString(String idString) {
+        this.setId(Integer.parseInt(idString));
+    }
+
     public String getIdString() {
         return new Integer(this.getId()).toString();
     }
 
     public String getNbAnimalString() {
         return new Integer(this.getNbAnimal()).toString();
+    }
+
+    public void setNbAnimalString(String nbAnimalString) {
+        this.setNbAnimal(Integer.parseInt(nbAnimalString));
     }
 
     public boolean updateEnclos() {
