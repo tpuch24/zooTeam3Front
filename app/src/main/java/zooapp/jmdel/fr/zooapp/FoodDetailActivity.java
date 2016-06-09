@@ -68,13 +68,19 @@ public class FoodDetailActivity extends AppCompatActivity {
         }
     }
 
-    private void setContent(){
+    private void setContent() {
         String content =
                 "Name :  " + food.getName() + " \n" +
-                "Type :  " + food.getType() + " \n " +
-                "Eater : " + food.getEater_type() + " \n " +
-                "Stock : " + food.getStock() + " " + food.getUnity();
+                        "Type :  " + food.getType() + " \n " +
+                        "Eater : " + food.getEater_type() + " \n " +
+                        "Stock : " + food.getStock() + " " + food.getUnity();
 
-        ((TextView) (findViewById(R.id.food_detail_text))).setText(content);
+        //((TextView) (findViewById(R.id.food_detail_text))).setText(content);
+
+        ((TextView) (findViewById(R.id.food_detail_name))).setText(food.getName().toString());
+        ((TextView) (findViewById(R.id.food_detail_type))).setText(food.getType().toString());
+        ((TextView) (findViewById(R.id.food_detail_eater))).setText(food.getEater_type().toString());
+        ((TextView) (findViewById(R.id.food_detail_stock))).setText(food.getStock().toString());
+        ((TextView) (findViewById(R.id.food_detail_unity))).setText(food.getUnity().toString());
     }
 }
