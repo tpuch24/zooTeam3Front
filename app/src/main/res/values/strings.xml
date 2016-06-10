@@ -8,4 +8,8 @@
     <string name="title_activity_food_detail">FoodDetailActivity</string>
     <string name="title_activity_animal_detail">FoodDetailActivity</string>
     <string name="title_activity_animal_new">FoodDetailActivity</string>
+    <string name="title_activity_view_tickets">ViewTicketsActivity</string>
+    <string name="title_activity_add_ticket">AddTicketActivity</string>
+    <string name="title_activity_tickets_details">TicketsDetailsActivity</string>
+    <string name="title_activity_tickets_add">TicketsAddActivity</string>
 </resources>

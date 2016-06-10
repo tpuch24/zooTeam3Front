@@ -47,8 +47,25 @@
         <activity android:name=".enclos.EnclosUpdateActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".enclos.EnclosAddActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ticket.TicketsListActivity"
+            android:label="@string/title_activity_view_tickets"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ticket.TicketsUpdateActivity"
+            android:label="@string/title_activity_add_ticket"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ticket.TicketsDetailsActivity"
+            android:label="@string/title_activity_tickets_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ticket.TicketsAddActivity"
+            android:label="@string/title_activity_tickets_add"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>

@@ -8,7 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+import zooapp.jmdel.fr.zooapp.ticket.TicketsListActivity;
 
 import zooapp.jmdel.fr.zooapp.enclos.EnclosActivity;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton animal = (FloatingActionButton) findViewById(R.id.animal);
+        assert animal != null;
         animal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         FloatingActionButton enclosure = (FloatingActionButton) findViewById(R.id.enclosure);
+        assert enclosure != null;
         enclosure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         FloatingActionButton food = (FloatingActionButton) findViewById(R.id.food);
+        assert food != null;
         food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,10 +57,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         FloatingActionButton ticket = (FloatingActionButton) findViewById(R.id.ticket);
+        assert ticket != null;
         ticket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    ((TextView)findViewById(R.id.message)).setText("Tickets");
+                Intent intent=new Intent(MainActivity.this,TicketsListActivity.class);
+                startActivity(intent);
             }
         });
     }
