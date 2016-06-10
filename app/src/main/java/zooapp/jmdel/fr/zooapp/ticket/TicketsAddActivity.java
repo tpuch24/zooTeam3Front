@@ -1,5 +1,6 @@
 package zooapp.jmdel.fr.zooapp.ticket;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import zooapp.jmdel.fr.zooapp.R;
 import zooapp.jmdel.fr.zooapp.ticket.model.Ticket;
 import zooapp.jmdel.fr.zooapp.ticket.model.TicketManager;
+import zooapp.jmdel.fr.zooapp.ticket.service.NetworkTicketService;
 
 public class TicketsAddActivity extends AppCompatActivity
 {
@@ -38,13 +40,19 @@ public class TicketsAddActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         ticket = new Ticket();
 
         TextView txtv = (TextView)findViewById(R.id.editText);
         assert txtv != null;
         txtv.setText("01/01/01");
+
+        //start service
+        Intent intent = new Intent(this, NetworkTicketService.class);
+        intent.setAction("ACTION_GET_LIST");
+        this.startService(intent);
+        this.;
+
+       // bindService();
 
         FloatingActionButton fap = (FloatingActionButton) findViewById(R.id.ticketAdd);
         assert fap != null;
