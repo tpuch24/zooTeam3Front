@@ -41,9 +41,10 @@ fillActivity();            }
                 // Appel du service d'insertion
                 // Fermeture de l'activity et appel de l'activity de détail
                 // Avec l'enregistrement en cours
+                EnclosManager enclosM = EnclosManager.getInstance(getApplicationContext());
                 Enclos enclos = new Enclos();
                 fillEnclos(enclos);
-                if (enclos.addEnclos()) {
+                if (enclosM.addEnclos(enclos)) {
                     Snackbar.make(view, "Création bien effectuée", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
 
@@ -62,8 +63,8 @@ fillActivity();            }
         ((EditText)findViewById(R.id.nbAnimaux)).setText("");
 
         Spinner spinner = (Spinner) findViewById(R.id.type);
-        EnclosManager.getInstance().getListeTypeEnclos();
-        ArrayList<String> typeEnclos = EnclosManager.getInstance().getListeTypeEnclos();
+        EnclosManager.getInstance(getApplicationContext()).getListeTypeEnclos();
+        ArrayList<String> typeEnclos = EnclosManager.getInstance(getApplicationContext()).getListeTypeEnclos();
         TypeEnclosAdapter typeEnclosAdapter = new TypeEnclosAdapter(this, typeEnclos);
         typeEnclosAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(typeEnclosAdapter);

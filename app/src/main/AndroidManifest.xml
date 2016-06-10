@@ -42,13 +42,23 @@
             android:name=".AnimalNewActivity"
             android:label="@string/title_activity_animal_new"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".enclos.EnclosDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".enclos.EnclosUpdateActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".enclos.EnclosAddActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+        <activity
+            android:name=".enclos.EnclosDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".enclos.EnclosUpdateActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".enclos.EnclosAddActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".enclos.EnclosService"
+            android:exported="false" />
+        <service
+            android:name=".enclos.EnclosServiceBind"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

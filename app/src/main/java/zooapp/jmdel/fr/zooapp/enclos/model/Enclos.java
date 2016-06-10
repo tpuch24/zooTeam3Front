@@ -80,19 +80,4 @@ public class Enclos implements Serializable {
     public void setNbAnimalString(String nbAnimalString) {
         this.setNbAnimal(Integer.parseInt(nbAnimalString));
     }
-
-    public boolean updateEnclos() {
-        EnclosManager enclosM = EnclosManager.getInstance();
-        return enclosM.updateEnclos(this);
-    }
-
-    public boolean addEnclos() {
-        EnclosManager enclosM = EnclosManager.getInstance();
-        return enclosM.addEnclos(this);
-    }
-
-    public boolean deleteEnclos() {
-        EnclosManager enclosM = EnclosManager.getInstance();
-        return enclosM.deleteEnclos(this);
-    }
 }

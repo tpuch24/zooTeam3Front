@@ -18,12 +18,15 @@ import zooapp.jmdel.fr.zooapp.enclos.model.EnclosManager;
 
 public class EnclosActivity extends ListActivity {
 
-    ArrayList<Enclos> enclos = EnclosManager.getInstance().getListeEnclos();
+    ArrayList<Enclos> enclos = new ArrayList<Enclos>();
+//            EnclosManager.getInstance(getApplicationContext()).getListeEnclos();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enclos);
+
+        enclos = EnclosManager.getInstance(this).getListeEnclos();
 
         EnclosAdapter enclosAdapter = new EnclosAdapter(this, enclos);
         setListAdapter(enclosAdapter);
@@ -42,14 +45,15 @@ public class EnclosActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
             Intent intent = new Intent(this,EnclosDetailActivity.class);
-            Enclos enclot = EnclosManager.getInstance().getEnclos(enclos.get(position));
+            Enclos enclot = EnclosManager.getInstance(getApplicationContext()).getEnclos(enclos.get(position));
             intent.putExtra("enclot",enclot);
             startActivity(intent);
     }
 
+
     protected void onRestart() {
         super.onRestart();
-        enclos = EnclosManager.getInstance().getListeEnclos();
+        enclos = EnclosManager.getInstance(getApplicationContext()).getListeEnclos();
         EnclosAdapter enclosAdapter = new EnclosAdapter(this, enclos);
         setListAdapter(enclosAdapter);
 //        Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_LONG).show();

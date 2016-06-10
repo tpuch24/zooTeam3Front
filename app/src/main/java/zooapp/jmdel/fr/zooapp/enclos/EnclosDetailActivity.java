@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import zooapp.jmdel.fr.zooapp.R;
 import zooapp.jmdel.fr.zooapp.enclos.model.Enclos;
+import zooapp.jmdel.fr.zooapp.enclos.model.EnclosManager;
 
 public class EnclosDetailActivity extends AppCompatActivity {
 
@@ -51,9 +51,10 @@ public class EnclosDetailActivity extends AppCompatActivity {
         deleteEnclos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (enclo.deleteEnclos() == true) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Supression effectuée", Toast.LENGTH_SHORT);
-                    toast.show();
+                EnclosManager enclosM = EnclosManager.getInstance(getApplicationContext());
+                if (enclosM.deleteEnclos(enclo) == true) {
+//                    Toast toast = Toast.makeText(getApplicationContext(), "Supression effectuée", Toast.LENGTH_SHORT);
+//                    toast.show();
      //               Snackbar.make(view, "Suppression effectuée", Snackbar.LENGTH_LONG)
      //                       .setAction("Action", null).show();
                     EnclosDetailActivity.this.finish();

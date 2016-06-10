@@ -46,7 +46,8 @@ public class EnclosUpdateActivity extends AppCompatActivity {
                 // Appel du service d'update
                 Enclos enclos = new Enclos();
                 fillEnclos(enclos);
-                if (enclos.updateEnclos()) {
+                EnclosManager enclosM = EnclosManager.getInstance(getApplicationContext());
+                if (enclosM.updateEnclos(enclos)) {
                     Snackbar.make(view, "Modification bien effectuée", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 } else {
@@ -64,8 +65,8 @@ public class EnclosUpdateActivity extends AppCompatActivity {
         ((EditText)findViewById(R.id.nbAnimaux)).setText(enclos.getNbAnimalString());
 
         Spinner spinner = (Spinner) findViewById(R.id.type);
-        EnclosManager.getInstance().getListeTypeEnclos();
-        ArrayList<String> typeEnclos = EnclosManager.getInstance().getListeTypeEnclos();
+        EnclosManager.getInstance(getApplicationContext()).getListeTypeEnclos();
+        ArrayList<String> typeEnclos = EnclosManager.getInstance(getApplicationContext()).getListeTypeEnclos();
         TypeEnclosAdapter typeEnclosAdapter = new TypeEnclosAdapter(this, typeEnclos);
         typeEnclosAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(typeEnclosAdapter);

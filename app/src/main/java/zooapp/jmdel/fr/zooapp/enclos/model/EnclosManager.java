@@ -1,6 +1,18 @@
 package zooapp.jmdel.fr.zooapp.enclos.model;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Binder;
+import android.os.IBinder;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+
 import java.util.ArrayList;
+
+import zooapp.jmdel.fr.zooapp.enclos.EnclosService;
+import zooapp.jmdel.fr.zooapp.enclos.EnclosServiceBind;
 
 /**
  * Created by hb on 07/06/2016.
@@ -9,16 +21,19 @@ public class EnclosManager {
     private ArrayList<Enclos> listeEnclos = new ArrayList<Enclos>();
     private ArrayList<String> listeTypeEnclos = new ArrayList<String>();
     private static EnclosManager instEnclos;
+    private Context context;
+  //  EnclosServiceBind.GetListeEnclos enclosServiceB;
 
-    private EnclosManager() {
+    private EnclosManager(Context pContext) {
         super();
+        context = pContext;
     //    initListe();
     }
 
-    public static EnclosManager getInstance(){
+    public static EnclosManager getInstance(Context context){
 
         if (instEnclos==null){
-            instEnclos = new EnclosManager();
+            instEnclos = new EnclosManager(context);
         }
         return instEnclos;
     }
@@ -52,8 +67,27 @@ public class EnclosManager {
     }
 
     public ArrayList<Enclos> getListeEnclos(){
-        initListe();
-        return listeEnclos;
+//        initListe();
+//        final ArrayList<Enclos> listeEnclos = new ArrayList<Enclos>();
+        Intent intent = new Intent(context, EnclosServiceBind.class);
+//        context.startService(intent);
+        boolean success = context.bindService(intent, new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+ //               Log.e("blabla", "connected");
+                EnclosServiceBind.GetListeEnclos enclosServiceB = (EnclosServiceBind.GetListeEnclos) service;
+                listeEnclos.clear();
+                listeEnclos = enclosServiceB.getListe();
+                // Appeler une callback du ListView pour le refraichir
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+
+            }
+        },Context.BIND_AUTO_CREATE);
+ //       Log.e("manager", "binding");
+         return listeEnclos;
     }
 
     public ArrayList<String> getListeTypeEnclos(){
@@ -62,14 +96,26 @@ public class EnclosManager {
     }
 
     public boolean updateEnclos(Enclos enclos) {
+        Intent intent = new Intent(context, EnclosService.class);
+        intent.setAction("UPDATE");
+        intent.putExtra("Enclos",enclos);
+        context.startService(intent);
         return true;
     }
 
     public boolean addEnclos(Enclos enclos) {
+        Intent intent = new Intent(context, EnclosService.class);
+        intent.setAction("INSERT");
+        intent.putExtra("Enclos",enclos);
+        context.startService(intent);
         return true;
     }
 
     public boolean deleteEnclos(Enclos enclos) {
+        Intent intent = new Intent(context, EnclosService.class);
+        intent.setAction("DELETE");
+        intent.putExtra("Enclos",enclos);
+        context.startService(intent);
         return true;
     }
 
