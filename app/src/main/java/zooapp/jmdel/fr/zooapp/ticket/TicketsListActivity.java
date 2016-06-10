@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.ticket;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -9,13 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import zooapp.jmdel.fr.zooapp.model.AnimalAdapter;
-import zooapp.jmdel.fr.zooapp.model.AnimalManager;
-import zooapp.jmdel.fr.zooapp.model.Ticket;
-import zooapp.jmdel.fr.zooapp.model.TicketAdapter;
-import zooapp.jmdel.fr.zooapp.model.TicketManager;
+import zooapp.jmdel.fr.zooapp.R;
+import zooapp.jmdel.fr.zooapp.ticket.model.Ticket;
+import zooapp.jmdel.fr.zooapp.ticket.model.TicketAdapter;
+import zooapp.jmdel.fr.zooapp.ticket.model.TicketManager;
 
 public class TicketsListActivity extends ListActivity {
 

@@ -1,7 +1,6 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.ticket.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TicketManager {
     protected ArrayList<Ticket> list = new ArrayList<>();

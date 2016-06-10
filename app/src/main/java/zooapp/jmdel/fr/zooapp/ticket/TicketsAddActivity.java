@@ -1,6 +1,5 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.ticket;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,12 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.sql.Time;
-import java.util.Date;
-
 import zooapp.jmdel.fr.zooapp.R;
-import zooapp.jmdel.fr.zooapp.model.Ticket;
-import zooapp.jmdel.fr.zooapp.model.TicketManager;
+import zooapp.jmdel.fr.zooapp.ticket.model.Ticket;
+import zooapp.jmdel.fr.zooapp.ticket.model.TicketManager;
 
 public class TicketsAddActivity extends AppCompatActivity
 {

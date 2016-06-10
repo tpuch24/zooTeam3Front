@@ -1,9 +1,11 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.ticket.model;
 
 import android.content.Context;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import zooapp.jmdel.fr.zooapp.model.GenericArrayAdapter;
 
 /**
  * Created by Thierry on 06/06/2016.

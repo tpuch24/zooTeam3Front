@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.ticket;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import zooapp.jmdel.fr.zooapp.model.Ticket;
-import zooapp.jmdel.fr.zooapp.model.TicketManager;
+import zooapp.jmdel.fr.zooapp.R;
+import zooapp.jmdel.fr.zooapp.ticket.model.Ticket;
+import zooapp.jmdel.fr.zooapp.ticket.model.TicketManager;
 
 public class TicketsDetailsActivity extends AppCompatActivity {
 

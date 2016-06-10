@@ -35,15 +35,15 @@
             android:label="@string/title_activity_food_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TicketsListActivity"
+            android:name=".ticket.TicketsListActivity"
             android:label="@string/title_activity_view_tickets"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TicketsUpdateActivity"
+            android:name=".ticket.TicketsUpdateActivity"
             android:label="@string/title_activity_add_ticket"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TicketsDetailsActivity"
+            android:name=".ticket.TicketsDetailsActivity"
             android:label="@string/title_activity_tickets_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
