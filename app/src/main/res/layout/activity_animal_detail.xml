@@ -9,7 +9,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:fitsSystemWindows="true"
-    tools:context="zooapp.jmdel.fr.zooapp.AnimalDetailActivity">
+    tools:context=".activity.animal.AnimalDetailActivity">
 
 
     <TextView

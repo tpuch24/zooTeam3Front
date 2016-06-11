@@ -1,6 +1,5 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.activity.foods;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -10,9 +9,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import zooapp.jmdel.fr.zooapp.model.Food;
-import zooapp.jmdel.fr.zooapp.model.FoodAdapter;
-import zooapp.jmdel.fr.zooapp.model.FoodManager;
+import zooapp.jmdel.fr.zooapp.R;
+import zooapp.jmdel.fr.zooapp.model.Food.Food;
+import zooapp.jmdel.fr.zooapp.model.Food.FoodManager;
 
 public class FoodDetailActivity extends AppCompatActivity {
     protected Food food=null ;

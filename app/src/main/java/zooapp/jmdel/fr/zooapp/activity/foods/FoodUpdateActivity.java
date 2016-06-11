@@ -1,19 +1,18 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.activity.foods;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import zooapp.jmdel.fr.zooapp.model.Food;
-import zooapp.jmdel.fr.zooapp.model.FoodManager;
+import zooapp.jmdel.fr.zooapp.R;
+import zooapp.jmdel.fr.zooapp.model.Food.Food;
+import zooapp.jmdel.fr.zooapp.model.Food.FoodManager;
 
 public class FoodUpdateActivity extends AppCompatActivity {
 

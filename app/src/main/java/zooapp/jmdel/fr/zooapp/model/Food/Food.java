@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.model.Food;
 
 import java.io.Serializable;
 import java.util.Enumeration;

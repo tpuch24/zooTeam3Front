@@ -1,22 +1,17 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.activity.animal;
 
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import zooapp.jmdel.fr.zooapp.model.Animal;
-import zooapp.jmdel.fr.zooapp.model.AnimalAdapter;
-import zooapp.jmdel.fr.zooapp.model.AnimalManager;
+import zooapp.jmdel.fr.zooapp.R;
+import zooapp.jmdel.fr.zooapp.model.animal.Animal;
+import zooapp.jmdel.fr.zooapp.model.animal.AnimalAdapter;
+import zooapp.jmdel.fr.zooapp.model.animal.AnimalManager;
 
 public class AnimalActivity extends ListActivity {
 

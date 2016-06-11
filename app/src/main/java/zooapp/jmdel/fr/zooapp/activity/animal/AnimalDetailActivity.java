@@ -1,8 +1,10 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.activity.animal;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import zooapp.jmdel.fr.zooapp.R;
 
 public class AnimalDetailActivity extends AppCompatActivity {
 

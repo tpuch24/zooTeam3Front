@@ -1,7 +1,9 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.activity.enclos;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import zooapp.jmdel.fr.zooapp.R;
 
 public class EnclosActivity extends AppCompatActivity {
 

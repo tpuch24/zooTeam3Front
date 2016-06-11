@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.model.animal;
 
 /**
  * Created by Thierry on 06/06/2016.

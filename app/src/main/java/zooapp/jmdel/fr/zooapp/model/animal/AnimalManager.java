@@ -1,7 +1,6 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.model.animal;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Thierry on 06/06/2016.

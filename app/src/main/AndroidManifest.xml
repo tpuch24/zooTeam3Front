@@ -19,27 +19,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AnimalActivity"
+            android:name=".activity.animal.AnimalActivity"
             android:label="@string/title_activity_animal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EnclosActivity"
+            android:name=".activity.enclos.EnclosActivity"
             android:label="@string/title_activity_enclos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FoodActivity"
+            android:name=".activity.foods.FoodActivity"
             android:label="@string/title_activity_food"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FoodDetailActivity"
+            android:name=".activity.foods.FoodDetailActivity"
             android:label="@string/title_activity_food_detail"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AnimalDetailActivity" />
+        <activity android:name=".activity.animal.AnimalDetailActivity" />
         <activity
-            android:name=".FoodFormActivity"
+            android:name=".activity.foods.FoodFormActivity"
             android:label="@string/title_activity_food_form"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FoodUpdateActivity"></activity>
+        <activity android:name=".activity.foods.FoodUpdateActivity"></activity>
     </application>
 
 </manifest>

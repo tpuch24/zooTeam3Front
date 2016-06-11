@@ -1,9 +1,12 @@
-package zooapp.jmdel.fr.zooapp.model;
+package zooapp.jmdel.fr.zooapp.model.Food;
 
 import android.content.Context;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import zooapp.jmdel.fr.zooapp.model.Food.Food;
+import zooapp.jmdel.fr.zooapp.model.GenericArrayAdapter;
 
 /**
  * Created by jean-michel on 07/06/2016.
