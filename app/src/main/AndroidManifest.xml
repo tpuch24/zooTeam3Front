@@ -27,19 +27,19 @@
             android:label="@string/title_activity_enclos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.foods.FoodActivity"
+            android:name=".activity.food.FoodActivity"
             android:label="@string/title_activity_food"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.foods.FoodDetailActivity"
+            android:name=".activity.food.FoodDetailActivity"
             android:label="@string/title_activity_food_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.animal.AnimalDetailActivity" />
         <activity
-            android:name=".activity.foods.FoodFormActivity"
+            android:name=".activity.food.FoodFormActivity"
             android:label="@string/title_activity_food_form"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.foods.FoodUpdateActivity"></activity>
+        <activity android:name=".activity.food.FoodUpdateActivity"></activity>
     </application>
 
 </manifest>

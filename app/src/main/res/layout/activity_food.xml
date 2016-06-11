@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:fitsSystemWindows="true"
-    tools:context=".activity.foods.FoodActivity">
+    tools:context=".activity.food.FoodActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

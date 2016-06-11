@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp.activity.foods;
+package zooapp.jmdel.fr.zooapp.activity.food;
 
 import android.app.ListActivity;
 import android.content.Intent;

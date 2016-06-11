@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import zooapp.jmdel.fr.zooapp.activity.animal.AnimalActivity;
 import zooapp.jmdel.fr.zooapp.activity.enclos.EnclosActivity;
-import zooapp.jmdel.fr.zooapp.activity.foods.FoodActivity;
+import zooapp.jmdel.fr.zooapp.activity.food.FoodActivity;
 
 public class MainActivity extends AppCompatActivity {
 
