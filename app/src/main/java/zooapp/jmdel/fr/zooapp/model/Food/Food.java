@@ -1,6 +1,7 @@
 package zooapp.jmdel.fr.zooapp.model.Food;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Enumeration;
 
 /**
@@ -8,15 +9,15 @@ import java.util.Enumeration;
  */
 
 public class Food implements Serializable {
-
+    protected long index;
     protected String name;
     protected String type;
     protected Double stock;
     protected String unity;
     protected String eater_type; //Check Enum en_eater_type
 
-    public Food(String name,String type,Double stock,String unity,String eater_type ) {
-
+    public Food(String name,String type,Double stock,String unity,String eater_type) {
+        this.index = index;
         this.name = name;
         this.type = type;
         this.stock = stock;

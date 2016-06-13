@@ -6,7 +6,9 @@ import java.util.ArrayList;
  * Created by jean-michel on 07/06/2016.
  */
 public class FoodManager {
+
     protected ArrayList<Food> liste = new ArrayList<Food>();
+
     protected static FoodManager instance;
 
     private FoodManager() {
