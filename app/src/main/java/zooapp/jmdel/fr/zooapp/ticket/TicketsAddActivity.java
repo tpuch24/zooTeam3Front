@@ -50,7 +50,7 @@ public class TicketsAddActivity extends AppCompatActivity
         Intent intent = new Intent(this, NetworkTicketService.class);
         intent.setAction("ACTION_GET_LIST");
         this.startService(intent);
-        this.;
+
 
        // bindService();
 

@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import zooapp.jmdel.fr.zooapp.R;
 import zooapp.jmdel.fr.zooapp.ticket.model.Ticket;
@@ -52,8 +54,16 @@ public class TicketsListActivity extends ListActivity {
 
         setListAdapter(ticketAdapter);
 
+        TextView textView = (TextView) findViewById(R.id.textView);
+        List<Repository> repos = GithubRepositoryListSyncService.startSyncLocalRepositoryAction("Xpros64", textView);
+        StringBuilder builder = new StringBuilder("List of repos online : \n");
+        for (Repository repo :
+                repos) {
+            builder.append(repo.getName()).append('\n');
+        }
+        textView.setText(builder.toString());
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addticket);
-        assert fab != null;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
