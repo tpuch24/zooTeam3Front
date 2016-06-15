@@ -3,13 +3,12 @@ package zooapp.jmdel.fr.zooapp.enclos;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import zooapp.jmdel.fr.zooapp.R;
 import zooapp.jmdel.fr.zooapp.enclos.model.Enclos;
@@ -19,17 +18,25 @@ import zooapp.jmdel.fr.zooapp.enclos.model.EnclosManager;
 public class EnclosActivity extends ListActivity {
 
     ArrayList<Enclos> enclos = new ArrayList<Enclos>();
-//            EnclosManager.getInstance(getApplicationContext()).getListeEnclos();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enclos);
 
-        enclos = EnclosManager.getInstance(this).getListeEnclos();
-
+// ¨Partie enclos
         EnclosAdapter enclosAdapter = new EnclosAdapter(this, enclos);
+        EnclosManager enclosManager = EnclosManager.getInstance(getApplicationContext());
+        enclosManager.setEnclosAdapter(enclosAdapter);
+        enclos = enclosManager.getListeEnclos();
+//        enclos = EnclosManager.getInstance(getApplicationContext()).getListeEnclos();
+//        enclosAdapter.addAll(enclos);
+
         setListAdapter(enclosAdapter);
+//        Enclos encl = new Enclos("toto",2,4,"titi");
+//        encl.setId(78);
+//        enclosAdapter.add(encl);
+//        enclosAdapter.notifyDataSetChanged();
 
         FloatingActionButton newEnclos = (FloatingActionButton) findViewById(R.id.newEnclos);
         newEnclos.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +60,7 @@ public class EnclosActivity extends ListActivity {
 
     protected void onRestart() {
         super.onRestart();
+        enclos.clear();
         enclos = EnclosManager.getInstance(getApplicationContext()).getListeEnclos();
         EnclosAdapter enclosAdapter = new EnclosAdapter(this, enclos);
         setListAdapter(enclosAdapter);

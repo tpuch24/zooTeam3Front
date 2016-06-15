@@ -15,9 +15,11 @@ public class EnclosServiceBind extends Service {
     }
 
     public class GetListeEnclos extends Binder {
+        ArrayList<Enclos> listeEnclos = new ArrayList<Enclos>();
+
         public ArrayList<Enclos> getListe()
         {
-            ArrayList<Enclos> listeEnclos = new ArrayList<Enclos>();
+            listeEnclos.clear();
             Enclos enclos = new Enclos( "Enclos des lions", 3, 7, "Cage");
             enclos.setId(1);
             listeEnclos.add(enclos);
@@ -38,7 +40,7 @@ public class EnclosServiceBind extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         // TODO: Return the communication channel to the service.
-//        Log.e("blabla", "bind");
+        Log.e("blabla", "bind");
         return new GetListeEnclos();
  //       throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -46,6 +48,8 @@ public class EnclosServiceBind extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-//        Log.e("blabla", "youîy");
+        Log.e("blabla", "youîy");
     }
+
+
 }

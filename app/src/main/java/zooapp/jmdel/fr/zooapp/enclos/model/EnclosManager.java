@@ -8,6 +8,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -22,7 +23,7 @@ public class EnclosManager {
     private ArrayList<String> listeTypeEnclos = new ArrayList<String>();
     private static EnclosManager instEnclos;
     private Context context;
-  //  EnclosServiceBind.GetListeEnclos enclosServiceB;
+    private EnclosAdapter enclosAdapter;
 
     private EnclosManager(Context pContext) {
         super();
@@ -38,20 +39,12 @@ public class EnclosManager {
         return instEnclos;
     }
 
-    private void initListe(){
-        listeEnclos.clear();
-        Enclos enclos = new Enclos( "Enclos des lions", 3, 7, "Cage");
-        enclos.setId(1);
-        listeEnclos.add(enclos);
-        enclos = new Enclos("Enclos des oiseaux", 8, 12, "Volière");
-        enclos.setId(5);
-        listeEnclos.add(enclos);
-        enclos = new Enclos("Parc des reptiles", 40, 60, "Vivarium");
-        enclos.setId(6);
-        listeEnclos.add(enclos);
-        enclos = new Enclos("Enclos nord", 0, 10, "Enclos");
-        listeEnclos.add(enclos);
-        enclos.setId(9);
+    public EnclosAdapter getEnclosAdapter() {
+        return enclosAdapter;
+    }
+
+    public void setEnclosAdapter(EnclosAdapter enclosAdapter) {
+        this.enclosAdapter = enclosAdapter;
     }
 
     private void initListeType(){
@@ -67,28 +60,28 @@ public class EnclosManager {
     }
 
     public ArrayList<Enclos> getListeEnclos(){
-//        initListe();
-//        final ArrayList<Enclos> listeEnclos = new ArrayList<Enclos>();
         Intent intent = new Intent(context, EnclosServiceBind.class);
-//        context.startService(intent);
         boolean success = context.bindService(intent, new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
- //               Log.e("blabla", "connected");
                 EnclosServiceBind.GetListeEnclos enclosServiceB = (EnclosServiceBind.GetListeEnclos) service;
                 listeEnclos.clear();
                 listeEnclos = enclosServiceB.getListe();
+                enclosAdapter.addAll(listeEnclos);
+                enclosAdapter.notifyDataSetChanged();
+//                Log.e("blabla", new Integer(listeEnclos.size()).toString());
                 // Appeler une callback du ListView pour le refraichir
             }
 
             @Override
             public void onServiceDisconnected(ComponentName name) {
-
+                Log.e("blabla", "Disconnected");
             }
         },Context.BIND_AUTO_CREATE);
- //       Log.e("manager", "binding");
+//       Log.e("blabla", "binding");
          return listeEnclos;
     }
+
 
     public ArrayList<String> getListeTypeEnclos(){
         initListeType();
@@ -123,4 +116,22 @@ public class EnclosManager {
         return enclos;
     }
 
+    public ArrayList<Enclos> getListe()
+    {
+        listeEnclos.clear();
+        Enclos enclos = new Enclos( "Enclos des lions", 3, 7, "Cage");
+        enclos.setId(1);
+        listeEnclos.add(enclos);
+        enclos = new Enclos("Enclos des oiseaux", 8, 12, "Volière");
+        enclos.setId(5);
+        listeEnclos.add(enclos);
+        enclos = new Enclos("Parc des reptiles", 40, 60, "Vivarium");
+        enclos.setId(6);
+        listeEnclos.add(enclos);
+        enclos = new Enclos("Enclos nord", 0, 10, "Enclos");
+        listeEnclos.add(enclos);
+        enclos.setId(9);
+
+        return listeEnclos;
+    }
 }

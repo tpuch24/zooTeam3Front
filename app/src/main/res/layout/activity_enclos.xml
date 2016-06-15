@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:fitsSystemWindows="true"
-    tools:context=".enclos.EnclosActivity">
+    tools:context="zooapp.jmdel.fr.zooapp.AnimalActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

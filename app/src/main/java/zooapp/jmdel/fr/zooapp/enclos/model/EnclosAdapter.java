@@ -17,6 +17,11 @@ public class EnclosAdapter extends GenericArrayAdapter<Enclos> {
         super(context, objects);
     }
 
+    private ArrayList<Enclos> getListeEnclos() {
+        ArrayList<Enclos> enclos = new ArrayList<Enclos>();
+        return EnclosManager.getInstance(this.getContext()).getListeEnclos();
+    }
+
     @Override
     public void drawText(TextView textView, Enclos object) {
         textView.setText(object.getId()
