@@ -6,21 +6,24 @@ import java.util.Date;
 public class Ticket implements Serializable{
     String category;
     String date;
-    int number_sold;
+    int numberSold;
     int income;
+    int id;
 
-    public Ticket(int income, String category, String date, int number_sold) {
+    public Ticket(int id, int income, String category, String date, int numberSold) {
+        this.id = id;
         this.income = income;
         this.category = category;
         this.date = date;
-        this.number_sold = number_sold;
+        this.numberSold = numberSold;
     }
 
     public Ticket() {
+        this.id=0;
         this.income = 0;
         this.category = "";
         this.date = "";
-        this.number_sold = 0;
+        this.numberSold = 0;
     }
 
     public String getCategory() {
@@ -39,12 +42,12 @@ public class Ticket implements Serializable{
         this.date = date;
     }
 
-    public int getNumber_sold() {
-        return number_sold;
+    public int getNumberSold() {
+        return numberSold;
     }
 
-    public void setNumber_sold(int number_sold) {
-        this.number_sold = number_sold;
+    public void setNumberSold(int numberSold) {
+        this.numberSold = numberSold;
     }
 
     public int getIncome() {
@@ -53,5 +56,12 @@ public class Ticket implements Serializable{
 
     public void setIncome(int income) {
         this.income = income;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -19,14 +19,14 @@ import zooapp.jmdel.fr.zooapp.ticket.model.TicketManager;
 
 public class TicketsListActivity extends ListActivity {
 
-    ArrayList<Ticket> ticketslist = null;
+    ArrayList<zooapp.jmdel.fr.zooapp.ticket.model.Ticket> ticketslist = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tickets_list);
 
-        setDatas();
+        //setDatas();
     }
 
     @Override
@@ -47,21 +47,23 @@ public class TicketsListActivity extends ListActivity {
     private void setDatas()
     {
         ticketslist = TicketManager.getInstance().getList();
+        TicketManager.getInstance().getList(GithubRepositoryListSyncService.startSyncLocalRepositoryAction("ZooServer/rest/getTicketList"));
 
-        ArrayAdapter<Ticket> adapter = new ArrayAdapter<>(this, R.layout.list_item, R.id.text, ticketslist);
+        ArrayAdapter<zooapp.jmdel.fr.zooapp.ticket.model.Ticket> adapter = new ArrayAdapter<>(this, R.layout.list_item, R.id.text, ticketslist);
 
         TicketAdapter ticketAdapter = new TicketAdapter(this, ticketslist);
 
         setListAdapter(ticketAdapter);
 
-        TextView textView = (TextView) findViewById(R.id.textView);
-        List<Repository> repos = GithubRepositoryListSyncService.startSyncLocalRepositoryAction("Xpros64", textView);
-        StringBuilder builder = new StringBuilder("List of repos online : \n");
-        for (Repository repo :
+//        TextView textView = (TextView) findViewById(R.id.textView);
+        //List<Ticket> repos = GithubRepositoryListSyncService.startSyncLocalRepositoryAction("ticket", textView);
+/*        StringBuilder builder = new StringBuilder("List of repos online : \n");
+        for (Ticket repo :
                 repos) {
-            builder.append(repo.getName()).append('\n');
+            builder.append(repo.getCategory()).append('\n');
         }
         textView.setText(builder.toString());
+*/
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addticket);
         fab.setOnClickListener(new View.OnClickListener() {

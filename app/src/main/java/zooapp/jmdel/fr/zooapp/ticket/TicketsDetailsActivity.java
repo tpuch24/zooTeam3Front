@@ -21,7 +21,7 @@ public class TicketsDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tickets_details);
 
-     //   setData();
+        //   setData();
     }
 
     @Override
@@ -32,28 +32,28 @@ public class TicketsDetailsActivity extends AppCompatActivity {
         setData();
     }
 
-    private void setData(){
+    private void setData() {
         Intent intent = getIntent();
 
         //Put all object in a bundle
         Bundle extras = intent.getExtras();
 
-        id=(int) extras.get("reference");
+        id = (int) extras.get("reference");
         Ticket ticket = TicketManager.getInstance().getOneById(id);
 
-        TextView txtv = (TextView)findViewById(R.id.textView2);
+        TextView txtv = (TextView) findViewById(R.id.textView2);
         assert txtv != null;
         txtv.setText(ticket.getDate());
 
-        txtv = (TextView)findViewById(R.id.textView3);
+        txtv = (TextView) findViewById(R.id.textView3);
         assert txtv != null;
         txtv.setText(ticket.getCategory());
 
-        txtv = (TextView)findViewById(R.id.textView4);
+        txtv = (TextView) findViewById(R.id.textView4);
         assert txtv != null;
-        txtv.setText( String.valueOf(ticket.getNumber_sold()));
+        txtv.setText(String.valueOf(ticket.getNumber_sold()));
 
-        txtv = (TextView)findViewById(R.id.textView5);
+        txtv = (TextView) findViewById(R.id.textView5);
         assert txtv != null;
         txtv.setText(String.valueOf(ticket.getIncome()));
 
@@ -62,13 +62,27 @@ public class TicketsDetailsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(TicketsDetailsActivity.this,TicketsUpdateActivity.class);
+                Intent intent = new Intent(TicketsDetailsActivity.this, TicketsUpdateActivity.class);
+
+                Bundle extras = intent.getExtras();
+                intent.putExtra("reference", id);
+                startActivity(intent);
+
+            }
+        });
+
+        fab = (FloatingActionButton) findViewById(R.id.ticketDelete);
+        assert fab != null;
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(TicketsDetailsActivity.this, TicketsListActivity.class);
 
                 Bundle extras = intent.getExtras();
                 intent.putExtra("reference", id);
                 startActivity(intent);
             }
         });
-
     }
 }

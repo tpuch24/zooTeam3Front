@@ -17,6 +17,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import zooapp.jmdel.fr.zooapp.ticket.model.Ticket;
+import zooapp.jmdel.fr.zooapp.ticket.model.TicketAdapter;
+import zooapp.jmdel.fr.zooapp.ticket.model.TicketManager;
 
 /**
  * This service provides method to keep local list of repositories in sync with the one on Github...
@@ -24,9 +27,9 @@ import retrofit2.http.Path;
 public class GithubRepositoryListSyncService extends IntentService {
 
     public static final String CREATE_ACTION = "create";
-    public static final String REPOSITORY_NAME = "name";
+    public static final String REPOSITORY_NAME = "category";
     private static final String TAG = GithubRepositoryListSyncService.class.getSimpleName();
-    private static List<Repository> previousResults = Collections.emptyList();
+    private static List<Ticket> previousResults = Collections.emptyList();
 
     /*Provides a name for the started thread, may be usefull in debug*/
     public GithubRepositoryListSyncService() {
@@ -46,39 +49,40 @@ public class GithubRepositoryListSyncService extends IntentService {
         context.startService(intent);
     }
 
-    public static List<Repository> startSyncLocalRepositoryAction(String username, final TextView textView) {
+    public static List<Ticket> startSyncLocalRepositoryAction(String username) {
         // Create a very simple REST adapter which points the GitHub API endpoint.
         GitHubClient client = ServiceGenerator.createService(GitHubClient.class);
 
         // Fetch and print a list of the repos of this owner.
-        Call<List<Repository>> call =
+        Call<List<Ticket>> call =
                 client.repositories(username);
 
-        call.enqueue(new Callback<List<Repository>>() {
+        call.enqueue(new Callback<List<Ticket>>() {
                          @Override
-                         public void onResponse(Call<List<Repository>> call, Response<List<Repository>> response) {
+                         public void onResponse(Call<List<Ticket>> call, Response<List<Ticket>> response) {
                              if (response.isSuccessful()) {
-                                 StringBuilder builder = new StringBuilder("List of repos online : \n");
-                                 List<Repository> repos = response.body();
-                                 for (Repository repo :
+                                 //StringBuilder builder = new StringBuilder("List of repos online : \n");
+                                 List<Ticket> repos = response.body();
+
+/*                                 for (Ticket repo :
                                          repos) {
-                                     builder.append(repo.getName()).append('\n');
-                                 }
-                                 textView.setText(builder.toString());
+                                     //builder.append(repo.getCategory()).append('\n');
+                                 }*/
+                                 //textView.setText(builder.toString());
                                  previousResults = repos;
                              } else {
                                  String msg = "error response code from server: " + response.code();
                                  Log.e(TAG, msg);
-                                 textView.setText(msg);
+                                 //textView.setText(msg);
                                  previousResults = Collections.emptyList();
                              }
                          }
 
                          @Override
-                         public void onFailure(Call<List<Repository>> call, Throwable t) {
+                         public void onFailure(Call<List<Ticket>> call, Throwable t) {
                              String msg = t.getMessage();
                              Log.e(TAG, "failure : " +msg, t);
-                             textView.setText(msg);
+                             //textView.setText(msg);
                              previousResults = Collections.emptyList();
                          }
                      }
@@ -110,15 +114,15 @@ public class GithubRepositoryListSyncService extends IntentService {
 
 
     public interface GitHubClient {
-        @GET("/users/{owner}/repos")
-        Call<List<Repository>> repositories(
-                @Path("owner") String owner
+        @GET("/{path}")
+        Call<List<Ticket>> repositories(
+                @Path(value = "path", encoded = true) String owner
         );
     }
 
     public static class ServiceGenerator {
 
-        public static final String API_BASE_URL = "https://api.github.com";
+        public static final String API_BASE_URL = "http://10.0.2.2:8080/";
 
         private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 

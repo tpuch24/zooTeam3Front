@@ -51,12 +51,20 @@
         android:id="@+id/textView5"
         android:layout_below="@+id/textView4" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center">
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/ticketUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_gravity="bottom|right" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/ticketDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left" />
+    </LinearLayout>
 </RelativeLayout>

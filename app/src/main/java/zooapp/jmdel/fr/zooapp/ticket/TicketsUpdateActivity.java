@@ -56,7 +56,7 @@ public class TicketsUpdateActivity extends AppCompatActivity {
 
         txtv = (EditText)findViewById(R.id.editText);
         assert txtv != null;
-        txtv.setText( String.valueOf(ticket.getNumber_sold()));
+        txtv.setText( String.valueOf(ticket.getNumberSold()));
 
         txtv = (EditText)findViewById(R.id.editText2);
         assert txtv != null;
@@ -76,7 +76,7 @@ public class TicketsUpdateActivity extends AppCompatActivity {
                 if(txtv.getText().toString().length()!=0)
                 {
                     int i=Integer.valueOf(txtv.getText().toString());
-                    ticket.setNumber_sold(i);
+                    ticket.setNumberSold(i);
                 }
                 else
                 {
@@ -95,7 +95,7 @@ public class TicketsUpdateActivity extends AppCompatActivity {
                     return;
                 }
 
-                TicketManager.getInstance().update(id,ticket);
+                TicketManager.getInstance().update(ticket);
 
                 finish();
             }

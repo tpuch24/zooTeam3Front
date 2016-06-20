@@ -65,7 +65,7 @@ public class TicketsAddActivity extends AppCompatActivity
                // int i=Integer.valueOf(str);
                 if(txtv.getText().toString().length()!=0)
                 {
-                ticket.setDate(str);
+                    ticket.setDate(str);
                 }
                 else
                 {
@@ -76,7 +76,7 @@ public class TicketsAddActivity extends AppCompatActivity
                 txtv = (EditText)findViewById(R.id.editText2);
                 if(txtv.getText().toString().length()!=0)
                 {
-                ticket.setCategory(txtv.getText().toString());
+                    ticket.setCategory(txtv.getText().toString());
                 }
                 else
                 {
@@ -87,7 +87,7 @@ public class TicketsAddActivity extends AppCompatActivity
                 txtv = (EditText)findViewById(R.id.editText3);
                 if(txtv.getText().toString().length()!=0)
                 {
-                    ticket.setNumber_sold(Integer.valueOf(txtv.getText().toString()));
+                    ticket.setNumberSold(Integer.valueOf(txtv.getText().toString()));
                 }
                 else
                 {
