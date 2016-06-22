@@ -9,20 +9,20 @@ import java.util.Enumeration;
  */
 
 public class Food implements Serializable {
-    protected long index;
+    //protected long index;
     protected String name;
     protected String type;
     protected Double stock;
     protected String unity;
-    protected String eater_type; //Check Enum en_eater_type
+    protected String eater; //Check Enum en_eater_type
 
-    public Food(String name,String type,Double stock,String unity,String eater_type) {
-        this.index = index;
+    public Food(String name,String type,Double stock,String unity,String eater) {
+        //this.index = index;
         this.name = name;
         this.type = type;
         this.stock = stock;
         this.unity = unity;
-        this.eater_type = eater_type;
+        this.eater = eater;
     }
 
     public String getName() {
@@ -57,12 +57,12 @@ public class Food implements Serializable {
         this.unity = unity;
     }
 
-    public String getEater_type() {
-        return eater_type;
+    public String getEater () {
+        return eater;
     }
 
-    public void setEater_type(String eater_type) {
-        this.eater_type = eater_type;
+    public void setEater (String eater) {
+        this.eater = eater;
     }
 }
 

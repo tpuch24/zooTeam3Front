@@ -1,4 +1,4 @@
-package zooapp.jmdel.fr.zooapp;
+package zooapp.jmdel.fr.zooapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import zooapp.jmdel.fr.zooapp.R;
 import zooapp.jmdel.fr.zooapp.activity.animal.AnimalActivity;
 import zooapp.jmdel.fr.zooapp.activity.enclos.EnclosActivity;
 import zooapp.jmdel.fr.zooapp.activity.food.FoodActivity;

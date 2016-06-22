@@ -1,6 +1,7 @@
 package zooapp.jmdel.fr.zooapp.model.Food;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jean-michel on 07/06/2016.
@@ -13,7 +14,7 @@ public class FoodManager {
 
     private FoodManager() {
         super();
-        initListe();
+       // initListe();
     }
 
     public static FoodManager getInstance() {
@@ -23,7 +24,7 @@ public class FoodManager {
         }
         return instance;
     }
-
+    /*
     protected void initListe() {
         Food food = new Food("Mouse", "Animal alive", 20.0, "u", "Reptiles");
         liste.add(food);
@@ -34,7 +35,7 @@ public class FoodManager {
         food = new Food("Salade", "Vegetables", 10.0, "kg", "Turtle");
         liste.add(food);
     }
-
+*/
     public void add_foodlist(Food foodToAdd) {
 
         for (Food foodItem : liste) {
@@ -86,6 +87,10 @@ public class FoodManager {
     }
 
     public ArrayList<Food> getFoodList() {
+        if(true) {
+            FoodSyncService myFoodSync = new FoodSyncService();
+            liste = (ArrayList)myFoodSync.startSyncLocalFoodAction();
+        }
         return liste;
     }
 }
