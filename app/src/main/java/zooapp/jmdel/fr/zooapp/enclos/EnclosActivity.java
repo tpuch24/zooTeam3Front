@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,14 +30,7 @@ public class EnclosActivity extends ListActivity {
         EnclosManager enclosManager = EnclosManager.getInstance(getApplicationContext());
         enclosManager.setEnclosAdapter(enclosAdapter);
         enclos = enclosManager.getListeEnclos();
-//        enclos = EnclosManager.getInstance(getApplicationContext()).getListeEnclos();
-//        enclosAdapter.addAll(enclos);
-
         setListAdapter(enclosAdapter);
-//        Enclos encl = new Enclos("toto",2,4,"titi");
-//        encl.setId(78);
-//        enclosAdapter.add(encl);
-//        enclosAdapter.notifyDataSetChanged();
 
         FloatingActionButton newEnclos = (FloatingActionButton) findViewById(R.id.newEnclos);
         newEnclos.setOnClickListener(new View.OnClickListener() {
@@ -51,19 +45,23 @@ public class EnclosActivity extends ListActivity {
         @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
+//            Intent intent = new Intent(this,EnclosDetailActivity.class);
+            Enclos enclos = (Enclos)l.getItemAtPosition(position);
+//            Enclos enclot = EnclosManager.getInstance(getApplicationContext()).getEnclos(enclos.get(position));
             Intent intent = new Intent(this,EnclosDetailActivity.class);
-            Enclos enclot = EnclosManager.getInstance(getApplicationContext()).getEnclos(enclos.get(position));
-            intent.putExtra("enclot",enclot);
+            intent.putExtra("enclot",enclos);
             startActivity(intent);
     }
 
 
     protected void onRestart() {
         super.onRestart();
-        enclos.clear();
-        enclos = EnclosManager.getInstance(getApplicationContext()).getListeEnclos();
         EnclosAdapter enclosAdapter = new EnclosAdapter(this, enclos);
+        EnclosManager enclosManager = EnclosManager.getInstance(getApplicationContext());
+        enclosManager.setEnclosAdapter(enclosAdapter);
+        enclos = enclosManager.getListeEnclos();
         setListAdapter(enclosAdapter);
+
 //        Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_LONG).show();
     }
 

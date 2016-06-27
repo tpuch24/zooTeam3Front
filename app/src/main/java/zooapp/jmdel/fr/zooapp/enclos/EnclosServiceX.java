@@ -1,18 +1,12 @@
 package zooapp.jmdel.fr.zooapp.enclos;
 
 import android.app.IntentService;
-import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
-import android.util.JsonWriter;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -20,20 +14,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.Path;
 import zooapp.jmdel.fr.zooapp.enclos.model.Enclos;
 
-
 /**
- * An {@link IntentService} subclass for handling asynchronous task requests in
- * a service on a separate handler thread.
- * <p>
- * TODO: Customize class - update intent actions and extra parameters.
+ * Created by hb on 22/06/2016.
  */
-public class EnclosService extends Service {
+public class EnclosServiceX extends IntentService {
+
     // TODO: Rename actions, choose action names that describe tasks that this
     // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
     public static final String DELETE = "DELETE";
@@ -47,7 +36,42 @@ public class EnclosService extends Service {
 //    public static final String EXTRA_PARAM1 = "zooapp.jmdel.fr.zooapp.enclos.extra.PARAM1";
 //    public static final String EXTRA_PARAM2 = "zooapp.jmdel.fr.zooapp.enclos.extra.PARAM2";
 
-    public EnclosService() {
+    public EnclosServiceX() {
+        super("EnclosServiceX");
+    }
+
+    @Override
+    protected void onHandleIntent(Intent intent) {
+        if (intent != null) {
+            final String action = intent.getAction();
+            if (INSERT.equals(action)) {
+                Enclos enclos = (Enclos) (intent.getExtras().get("Enclos"));
+                insert(enclos);
+            } else if (UPDATE.equals(action)) {
+                Enclos enclos = (Enclos) (intent.getExtras().get("Enclos"));
+                update(enclos);
+            } else if (DELETE.equals(action)) {
+                Enclos enclos = (Enclos) (intent.getExtras().get("Enclos"));
+                delete(enclos);
+            } else if (SELECT.equals(action)) {
+                Enclos enclos = (Enclos) (intent.getExtras().get("Enclos"));
+//                SelectEnclos.select(enclos);
+            }
+        }
+    }
+
+    private void update(Enclos enclos) {
+        Toast toast = Toast.makeText(getApplicationContext(), "Mise à jour bien effectuée", Toast.LENGTH_LONG);
+        toast.show();
+    }
+
+    private void insert(Enclos enclos) {
+        Toast toast = Toast.makeText(getApplicationContext(), "Création bien effectuée", Toast.LENGTH_LONG);
+        toast.show();
+    }
+    private void delete(Enclos enclos) {
+        Toast toast = Toast.makeText(getApplicationContext(), "Suppresion bien effectuée", Toast.LENGTH_LONG);
+        toast.show();
     }
 
     public class SelectEnclos extends Binder {
@@ -56,6 +80,7 @@ public class EnclosService extends Service {
                               final TextView textNbAnimal,
                               final TextView textType) {
             enclos = enclo;
+//            urlRest = urlRest + enclos.getId();
             EnclosSelect select = ServiceGenerator.createService(EnclosSelect.class);
             Call<Enclos> call = select.selectEnclos(enclos.getId());
             call.enqueue(new Callback<Enclos>() {
@@ -120,5 +145,6 @@ public class EnclosService extends Service {
         super.onCreate();
         Log.e("blabla", "youîy");
     }
+
 
 }

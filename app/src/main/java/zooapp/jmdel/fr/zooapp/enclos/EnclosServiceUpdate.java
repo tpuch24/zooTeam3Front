@@ -1,6 +1,7 @@
 package zooapp.jmdel.fr.zooapp.enclos;
 
 import android.app.IntentService;
+import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
@@ -11,8 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-
-import java.util.ArrayList;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -28,12 +27,10 @@ import zooapp.jmdel.fr.zooapp.enclos.model.Enclos;
 
 
 /**
- * An {@link IntentService} subclass for handling asynchronous task requests in
- * a service on a separate handler thread.
- * <p>
- * TODO: Customize class - update intent actions and extra parameters.
+ * Created by hb on 22/06/2016.
  */
-public class EnclosService extends Service {
+public class EnclosServiceUpdate extends Service {
+
     // TODO: Rename actions, choose action names that describe tasks that this
     // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
     public static final String DELETE = "DELETE";
@@ -47,30 +44,25 @@ public class EnclosService extends Service {
 //    public static final String EXTRA_PARAM1 = "zooapp.jmdel.fr.zooapp.enclos.extra.PARAM1";
 //    public static final String EXTRA_PARAM2 = "zooapp.jmdel.fr.zooapp.enclos.extra.PARAM2";
 
-    public EnclosService() {
+    public EnclosServiceUpdate() {
     }
 
-    public class SelectEnclos extends Binder {
-        public Enclos select( Enclos enclo,
-                              final TextView textNom,
-                              final TextView textNbAnimal,
-                              final TextView textType) {
+    public class UpdateEnclos extends Binder {
+        public Enclos updateX( Enclos enclo) {
             enclos = enclo;
-            EnclosSelect select = ServiceGenerator.createService(EnclosSelect.class);
-            Call<Enclos> call = select.selectEnclos(enclos.getId());
+//            urlRest = urlRest + enclos.getId();
+            EnclosUpdate up = ServiceGenerator.createService(EnclosUpdate.class);
+            Call<Enclos> call = up.updateEnclos(enclos.getId());
             call.enqueue(new Callback<Enclos>() {
                              @Override
                              public void onResponse(Call<Enclos> call, Response<Enclos> response) {
                                  if (response.isSuccessful()) {
                                      Log.e("response", "ok");
                                      enclos = response.body();
-                                     textNom.setText(enclos.getNom());
-                                     textNbAnimal.setText(enclos.getNbAnimalString());
-                                     textType.setText(enclos.getType());
                                      Log.e("response",enclos.getNom());
                                  } else {
                                      String msg = "error response code from server: " + response.code();
-//                                     Log.e("toto", msg);
+                                     Log.e("toto", msg);
                                  }
                              }
 
@@ -86,9 +78,12 @@ public class EnclosService extends Service {
         }
     }
 
-    public interface EnclosSelect {
+    public interface EnclosUpdate {
         @GET("zooteam3/rest/json/enclos/{id}")
-        Call<Enclos> selectEnclos(@Path("id") int id);
+        Call<Enclos> updateEnclos(@Path("id") int id);
+
+//        @POST("zooteam3/rest/json/enclos/update")
+//        Call<Enclos> updateEnclos(@Body Enclos enclos);
     }
 
     public static class ServiceGenerator {
@@ -107,11 +102,12 @@ public class EnclosService extends Service {
             return retrofit.create(serviceClass);
         }
     }
+
     @Override
     public IBinder onBind(Intent intent) {
         // TODO: Return the communication channel to the service.
         Log.e("blabla", "bind");
-        return new SelectEnclos();
+        return new UpdateEnclos();
         //       throw new UnsupportedOperationException("Not yet implemented");
     }
 
@@ -120,5 +116,6 @@ public class EnclosService extends Service {
         super.onCreate();
         Log.e("blabla", "youîy");
     }
+
 
 }

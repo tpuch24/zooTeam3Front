@@ -46,14 +46,9 @@ public class EnclosUpdateActivity extends AppCompatActivity {
                 // Appel du service d'update
                 Enclos enclos = new Enclos();
                 fillEnclos(enclos);
+
                 EnclosManager enclosM = EnclosManager.getInstance(getApplicationContext());
-                if (enclosM.updateEnclos(enclos)) {
-                    Snackbar.make(view, "Modification bien effectuée", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                } else {
-                    Snackbar.make(view,"La modification a échoué", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
+                Enclos encloss = enclosM.updateEnclos(enclos,getApplicationContext());
             }
         });
     }

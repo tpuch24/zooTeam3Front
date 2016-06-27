@@ -26,6 +26,14 @@ public class EnclosDetailActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.nbAnimaux)).setText(enclo.getNbAnimalString());
         ((TextView)findViewById(R.id.type)).setText(enclo.getType());
 
+        TextView textNom = (TextView) findViewById(R.id.nom);
+        TextView textNbAnimaux = (TextView) findViewById(R.id.nbAnimaux);
+        TextView textType = (TextView) findViewById(R.id.type);
+        EnclosManager enclosM = EnclosManager.getInstance(getApplicationContext());
+        Enclos encloss = enclosM.selectEnclos(enclo,textNom, textNbAnimaux, textType);
+
+        EnclosManager enclosMM = EnclosManager.getInstance(getApplicationContext());
+        boolean bol = enclosMM.deleteEnclos(enclo);
 
         FloatingActionButton updateEnclos = (FloatingActionButton) findViewById(R.id.updateEnclos);
         updateEnclos.setOnClickListener(new View.OnClickListener() {
@@ -52,14 +60,10 @@ public class EnclosDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EnclosManager enclosM = EnclosManager.getInstance(getApplicationContext());
-                if (enclosM.deleteEnclos(enclo) == true) {
-//                    Toast toast = Toast.makeText(getApplicationContext(), "Supression effectuée", Toast.LENGTH_SHORT);
-//                    toast.show();
-     //               Snackbar.make(view, "Suppression effectuée", Snackbar.LENGTH_LONG)
-     //                       .setAction("Action", null).show();
-                    EnclosDetailActivity.this.finish();
+                enclosM.setContext(getApplicationContext());
+                enclosM.deleteEnclos(enclo);
+                EnclosDetailActivity.this.finish();
                 };
-            }
         });
 
     }
